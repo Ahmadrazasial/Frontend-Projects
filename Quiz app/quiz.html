@@ -1,11 +1,224 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Quick Quiz</title>
+    <link rel="stylesheet" href="quiz.css">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        nav{
+            width: 100vw;
+            height: 70px;
+            align-items: center;
+            border: 1px solid black;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            background:linear-gradient(to right , rgb(224, 169, 67),rgb(247, 163, 6));
+        }
+        nav h1{
+            font-size: 40px;
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+            color: white;
+        }
+        .container{
+            width: 60vw;
+            height: 100vh;
+            /* overflow: hidden; */
+            /* word-wrap: nowrap; */
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+               }
+        #intro{
+            width: 100%;
+            border: 1px solid black;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border-radius: 20px;
+            gap: 20px;
+            margin-top: 20px;
+            /* background-color:rgb(237, 240, 241); */
+        }
+        #intro p{
+font-size: 27px;
+
+        }
+        #intro ol{
+            width: 50%;
+            /* border: 1px solid yellow; */
+            /* align-self: center; */
+            font-size: 22px;
+            /* color: #A82810; */
+            /* font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+            margin-left:20PX ;
+            /* gap: 20px; */
+        }
+        #btn{
+    font-size: 30px;
+    font-family: 'Times New Roman', Times, serif;
+    padding: 20px ;
+    width: 220px;
+    border-radius: 50px;
+    background-color: orange;
+    color: white;
+    font-weight: bold;
+    /* border: none; */
+    margin-top: 20px;
+    cursor: pointer;
+    align-self: center;
+        }
+    </style>
 </head>
+
 <body>
-    
+    <header>
+        <nav>
+            <h1>Quick Quiz</h1>
+        </nav>
+    </header>
+    <main>
+        <div class="container">
+            <div id="intro">
+                <p>Welcome to the Quick Quiz! This is your chance to put your knowledge to the test in just a few
+                    minutes. Whether you're here for fun, practice, or competition, get ready to think fast and stay
+                    sharp!</p>
+                <ol>
+                    <li>You have [X minutes] to complete the quiz. (Adjust as needed.)</li>
+                    <li>No internet searches, notes, or outside help allowed—just your brain!
+
+                    </li>
+                    <li>You only get one chance per question—no going back!
+
+                    </li>
+                    <li> Each correct answer earns you [1 point]. No negative marking</li>
+                    <li>This is a friendly challenge—play fair and have fun!</li>
+                </ol>
+                
+            </div>
+            <button type="menu" id="btn">Start Lesson</button>
+            <div class="question">
+                <div class="sawal">
+                    <h2>On which Day , Pkistan got Independance ?</h2>
+                    <form action="" method="post" class="options">
+                        <input type="radio" name="" id="one"><label for="one">Saturday</label><br>
+                        <input type="radio" name="" id="two"><label for="two">Sunday</label><br>
+                        <input type="radio" name="" id="three"><label for="three">Thursday</label><br>
+                        <input type="radio" name="" id="four"><label for="Four">Friday</label><br>
+                        <button type="submit" class="Check">Submit</button>
+                        <button type="submit" class="next">Next</button>
+                    </form>
+                </div>
+                <div class="sawal">
+                    <h2>What was the age of Qaid-e-Azam , when Pkistan got Independance ?</h2>
+                    <form action="" method="post" class="options">
+                        <input type="radio" name="" id="one"><label for="one">60</label><br>
+                        <input type="radio" name="" id="two"><label for="two">61</label><br>
+                        <input type="radio" name="" id="three"><label for="three">62</label><br>
+                        <input type="radio" name="" id="four"><label for="Four">63</label><br>
+                        <button type="submit" class="Check">Submit</button>
+                        <button type="submit" class="next">Next</button>
+                    </form>
+                </div>
+                <div class="sawal">
+                    <h2>which country recognized first, when Pkistan got Independance ?</h2>
+                    <form action="" method="post" class="options">
+                        <input type="radio" name="" id="one"><label for="one">China</label><br>
+                        <input type="radio" name="" id="two"><label for="two">USA</label><br>
+                        <input type="radio" name="" id="three"><label for="three">Iran</label><br>
+                        <input type="radio" name="" id="four"><label for="Four">Afganistan</label><br>
+                        <button type="submit" class="Check">Submit</button>
+                        <button type="submit" class="next">Next</button>
+                    </form>
+                </div>
+                <div class="sawal">
+                    <h2>How much millitery does Pkistan got on Independance ?</h2>
+                    <form action="" method="post" class="options">
+                        <input type="radio" name="" id="one"><label for="one">110,000 - 120,000 </label><br>
+                        <input type="radio" name="" id="two"><label for="two">120,001 - 130,000</label><br>
+                        <input type="radio" name="" id="three"><label for="three">130,001 - 140,000</label><br>
+                        <input type="radio" name="" id="four"><label for="Four">140,001 - 150,000</label><br>
+                        <button type="submit" class="Check">Submit</button>
+                        <button type="submit" class="next">Next</button>
+                    </form>
+                </div>
+                <div class="sawal">
+                    <h2></h2>
+                    <form action="" method="post" class="options">
+                        <input type="radio" name="" id="one"><label for="one">Saturday</label><br>
+                        <input type="radio" name="" id="two"><label for="two">Sunday</label><br>
+                        <input type="radio" name="" id="three"><label for="three">Thursday</label><br>
+                        <input type="radio" name="" id="four"><label for="Four">Friday</label><br>
+                        <button type="submit" class="Check">Submit</button>
+                        <button type="submit" class="next">Next</button>
+                    </form>
+                </div>
+                <div class="sawal">
+                    <h2>On which Day,Pkistan got Independance ?</h2>
+                    <form action="" method="post" class="options">
+                        <input type="radio" name="" id="one"><label for="one">Saturday</label><br>
+                        <input type="radio" name="" id="two"><label for="two">Sunday</label><br>
+                        <input type="radio" name="" id="three"><label for="three">Thursday</label><br>
+                        <input type="radio" name="" id="four"><label for="Four">Friday</label><br>
+                        <button type="submit" class="Check">Submit</button>
+                        <button type="submit" class="next">Next</button>
+                    </form>
+                </div>
+                <div class="sawal">
+                    <h2>On which Day,Pkistan got Independance ?</h2>
+                    <form action="" method="post" class="options">
+                        <input type="radio" name="" id="one"><label for="one">Saturday</label><br>
+                        <input type="radio" name="" id="two"><label for="two">Sunday</label><br>
+                        <input type="radio" name="" id="three"><label for="three">Thursday</label><br>
+                        <input type="radio" name="" id="four"><label for="Four">Friday</label><br>
+                        <button type="submit" class="Check">Submit</button>
+                        <button type="submit" class="next">Next</button>
+                    </form>
+                </div>
+                <div class="sawal">
+                    <h2>On which Day,Pkistan got Independance ?</h2>
+                    <form action="" method="post" class="options">
+                        <input type="radio" name="" id="one"><label for="one">Saturday</label><br>
+                        <input type="radio" name="" id="two"><label for="two">Sunday</label><br>
+                        <input type="radio" name="" id="three"><label for="three">Thursday</label><br>
+                        <input type="radio" name="" id="four"><label for="Four">Friday</label><br>
+                        <button type="submit" class="Check">Submit</button>
+                        <button type="submit" class="next">Next</button>
+                    </form>
+                </div>
+                <div class="sawal">
+                    <h2>On which Day,Pkistan got Independance ?</h2>
+                    <form action="" method="post" class="options">
+                        <input type="radio" name="" id="one"><label for="one">Saturday</label><br>
+                        <input type="radio" name="" id="two"><label for="two">Sunday</label><br>
+                        <input type="radio" name="" id="three"><label for="three">Thursday</label><br>
+                        <input type="radio" name="" id="four"><label for="Four">Friday</label><br>
+                        <button type="submit" class="Check">Submit</button>
+                        <button type="submit" class="next">Next</button>
+                    </form>
+                </div>
+                <div class="sawal">
+                    <h2>On which Day,Pkistan got Independance ?</h2>
+                    <form action="" method="post" class="options">
+                        <input type="radio" name="" id="one"><label for="one">Saturday</label><br>
+                        <input type="radio" name="" id="two"><label for="two">Sunday</label><br>
+                        <input type="radio" name="" id="three"><label for="three">Thursday</label><br>
+                        <input type="radio" name="" id="four"><label for="Four">Friday</label><br>
+                        <button type="submit" class="Check">Submit</button>
+                        <button type="submit" class="next">Next</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="quiz.js"></script>
 </body>
+
 </html>
