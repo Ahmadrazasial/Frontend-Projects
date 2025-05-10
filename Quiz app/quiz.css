@@ -76,40 +76,54 @@ nav h1 {
     align-self: center;
 }
 .question{
-    /* border: 1px solid black; */
-    position: relative;
-    margin: 0 auto;
-    margin-top: 50px;
-}
-.sawal{
+    border: 1px solid black;
     width: 60vw;
-    /* border: 1px solid blue; */
-    padding: 20px;
+    border-radius: 20px;
     display: flex;
     flex-direction: column;
-    /* margin: 10px 0; */
-    /* position: absolute; */
+    margin: 0 auto;
+    margin-top: 50px;
+    padding: 20px;
+    position: relative;
+    display: none;
+    /* opacity: 0; */
+    /* transition: opacity 1s ease; */
+}
+.sawal{
+    width: 100%;
+    /* border: 1px solid blue; */
+    display: flex;
+    margin: auto;
+    flex-direction: column;
+    
+    top: 0px;
+    left: 0;
+
+}
+#nd,#rd,#th,#five,#six,#seven,#eight,#nine,#ten{
+    display: none;
 }
 .sawal h2{
  font-size: 30px;
 }
 .sawal .options{
-    border: 1px solid black;
+    /* border: 1px solid black; */
     margin: 20px;
 }
 .options input[type=radio] {
     width: 2em;
     height: 2em;
-    margin: 10px 0;
+    margin: 10px 20px;
     vertical-align: middle;
     border: 2px solid black;
     /* padding: 2px; */
     
 }
-.options label{
+label {
     font-size: 1.5em;
-    margin: 10px 20px ;
-    vertical-align: middle;
+    vertical-align:middle;
+    margin: 10px 20px;
+
 }
 .options .Check, .next{
     width: 120px;
@@ -123,6 +137,10 @@ nav h1 {
     font-family: 'Times New Roman', Times, serif;
     margin: 20px 0;
     cursor: pointer;
+    /* position:absolute; */
+}
+.next{
+    display: none;
 }
 .Check:hover,.next:hover{
     background-color: rgb(233, 118, 10);
