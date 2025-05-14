@@ -1,0 +1,50 @@
+*{
+    font-family: sans-serif;
+}
+
+.large{
+            width: 90vw;
+            height: 80vh;
+            margin: 0 auto;
+            border: 1px solid black;
+            /* position: relative; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+        .view{
+            width: 75%;
+            height: 100%;
+            border: 1px solid black;
+            margin: auto;
+            display: none;    
+        }
+        .viewBtn{
+            width: 50%;
+            height: 60%;
+            /* border: 1px solid black; */
+            /* margin: 0 auto; */
+            /* display: none; */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border-radius: 30px;
+            box-shadow: 5px 10px 25px 20px #EFEFEF;
+        }
+        #upload{
+            /* width: 150px; */
+            padding: 10px 30px;
+            /* height: 50px; */
+            background-color:#127DFF ;
+            color: white;
+            font-size: 30px;
+            border-radius: 30px;
+            border: none;
+            cursor: pointer;
+        }
+        #uploadFile{
+            display: none;
+        }
+        
