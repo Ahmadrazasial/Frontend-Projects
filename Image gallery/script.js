@@ -100,18 +100,72 @@ if(!isHovered) return;
             left:200,
             behavior:'smooth',
         })
+    }else if(e.key === "ArrowLeft"){
+        list.scrollBy({
+            left:-200,
+            behavior:'smooth',
+        })
     }
 })
-let zoomed = false;
+
+function zoom(){
+   let zoomed = true;
+   let currentY = 0;
 mainImg.addEventListener("dblclick",(e)=>{
-    // e.preventDefault();
     // alert("clicked")
+    
     if(!zoomed){
-    mainImg.style.transform = "scale(1.2)";
+
+let height = preview.clientHeight;
+console.log(preview);
+const newHeight = height * 2;
+
+
+    mainImg.style.transform = "scale(2)";
     preview.style.overflow = "hidden";
+    // mainImg.style.cursor = "zoom-out";
     zoomed = true;
     }else if(zoomed){
          mainImg.style.transform = "scale(1)";
          zoomed = false;
+         preview.style.height = '';
+        //   mainImg.style.cursor = "zoom-out";
      }
 })
+
+ mainImg.setAttribute('tabindex','0');
+ mainImg.focus();
+mainImg.addEventListener("keydown",(e)=>{
+   
+    if(!zoomed) return;
+    const preBox = preview.getBoundingClientRect();
+    const imgBox = mainImg.getBoundingClientRect();
+
+    console.log(imgBox);
+    const scale = 2;
+const preHeight = preBox.height;
+    const scaleHeight = imgBox.height;
+console.log(scaleHeight);
+    const maxUp = preHeight - scaleHeight;
+      
+    if(e.key === "ArrowUp"){
+        currentY -=20;
+       
+        if(currentY < maxUp) currentY = maxUp;
+
+         
+    }
+    if(e.key === "ArrowDown"){
+        currentY +=20;
+        
+        if(currentY > 0) currentY = 0;
+
+         
+    }
+
+mainImg.style.transform = `scale(2) translateY(${currentY}px)`;
+})
+
+}
+
+zoom();
