@@ -1,11 +1,73 @@
 * {
     font-family: sans-serif;
+    padding: 0;
+    margin: 0;
 }
-
+#navbar{
+    width: 100vw;
+    height: 7vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid blue;
+    background-color: #127DFF;
+    /* padding: 20px; */
+}
+.add{
+    margin: 20px;
+    cursor: pointer;
+}
+#navbar ul{
+   position: relative; 
+   /* border: 1px solid green; */
+   width: 70px;
+   height: 30px;
+margin: 30px;
+}
+.button {
+    width: 100%;
+    height: 100% ;
+    position: absolute;
+    top: 0;
+    left: 0;
+    list-style: none;
+    border: none;
+    border: 2px solid white;
+    color: white;
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif ;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+#dark{
+    display: none;
+}
+main{
+    position: relative;
+}
+.adding{
+    position: absolute;
+    left: 10px;
+    display: none;
+}
+.adding li{
+    list-style: none;
+    width: 90px;
+    height: 40px;
+    text-align: center;
+    font-size: 30px;
+    border: 2px solid #127DFF;
+    border-top: none;
+    color: #127DFF;
+    font-weight: 550;
+    font-family: 'Times New Roman', Times, serif;
+}
 .large {
     width: 90vw;
-    height: 78vh;
-    margin: 20px auto;
+    height: 71vh;
+    margin: 0 auto;
     /* border: 1px solid black; */
     /* position: relative; */
     display: flex;
@@ -18,17 +80,25 @@
 .view {
     width: 100%;
     height: 100%;
-    /* border: 1px solid black; */
+    border: 1px solid black;
     margin: auto;
     border-radius: 20px;
-    display: none;
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
     overflow: hidden;
     position: relative;
     margin: 0 auto;
     user-select: none;
+    display: none;
+
+}
+.next{
+    position: absolute;
+    top: 50%;
 }
 #uploadedImg{
- width: 100%;
+ width: 95%;
  height: 100%;
  object-fit: contain;
  /* border: 1px solid red; */
@@ -43,6 +113,7 @@
     /* border: 1px solid black; */
     display: flex;
     flex-direction: column;
+    gap: 10px;
     align-items: center;
     justify-content: center;
     border-radius: 30px;
@@ -68,8 +139,8 @@
 
 #thumbnailBox {
     width: 90vw;
-    /* border: 1px solid black; */
-    height: 150px;
+    border: 1px solid black;
+    height: 15vh;
     margin: 0 auto;
     position: relative;
 }
@@ -99,8 +170,8 @@
 }
 
 .small {
-    width: 110px;
-    height: 110px;
+    width: 100px;
+    height: 100px;
     border: 1px solid green;
     display: inline-block;
     margin: 10px;
@@ -140,6 +211,36 @@ align-self: flex-end;
     color: #127DFF;
     margin: 0;
 }
+#footer{
+    height: 4vh;
+    width: 100vw;
+    margin: 0 auto;
+    border: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color:#127DFF ;
+}
+.lengths{
+    display: flex;
+    margin: 0 70px;
+    gap: 40px;
+}
+.length{
+    list-style: none;
+    color:white;
+    /* background-color: ; */
+}
+#footer button{
+    background: none;
+    color: white;
+    border: 1px solid  white;
+    width: 100px;
+    height: 25px;
+    border-radius: 10px;
+    margin-right: 100px;
+    cursor: pointer;
+}
 @media screen and (max-width:700px){
     .view{
         /* display: block; */
@@ -172,12 +273,20 @@ align-self: flex-end;
     #folderBtn{
         align-self: center;
     }
+    .next{
+        display: none;
+        width: 0;
+    }
 }
 @media screen and (min-width:701px) and (max-width:1000px){
     .view{
         /* display: block; */
         width: 100%;
         height: 80%;
+    }
+    .next{
+        display: none;
+        width: 0;
     }
     .viewBtn{
         width: 60%;

@@ -10,7 +10,22 @@
 </head>
 
 <body>
+    <header>
+        <nav id="navbar">
+            <div class="add"> <img src="add.svg" alt=""></div>
+            <ul>
+                <li class="button" id="dark">Dark</li>
+                <li class="button" id="light">Light</li>
+            </ul>
+        </nav>
+    </header>
     <main>
+        
+            <ul class="adding">
+                <li class="addBtn">Image</li>
+                <li class="addBtn">Folder</li>
+            </ul>
+        
         <div class="container">
             <div class="large">
                 <div class="viewBtn">
@@ -20,7 +35,9 @@
                     <input type="file"  id="uploadFile" accept="image/*">
                 </div>
                 <div class="view">
+                    <img class="next" id="left" src="left.svg" alt="">
                     <img src="" alt="" id="uploadedImg">
+                    <img class="next" id="right" src="right.svg" alt="">
                 </div>
             </div>
 
@@ -38,6 +55,13 @@
             </div>
         </div>
     </main>
+    <footer id="footer">
+        <ul class="lengths">
+            <li class="length" id="high">width</li>
+            <li class="length" id="wide">height</li>
+        </ul>
+        <button id="thumbnail">Thumbnail</button>
+    </footer>
     <script src="script.js"></script>
 </body>
 

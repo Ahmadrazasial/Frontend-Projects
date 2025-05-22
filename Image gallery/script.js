@@ -70,102 +70,110 @@ folderInput.addEventListener("change", function (e) {
         })
     }
     function changeImg() {
-    let img = document.querySelectorAll(".smallImg");
-    img.forEach(image => {
-        image.addEventListener("click", () => {
-            mainImg.src = image.src
+        let img = document.querySelectorAll(".smallImg");
+        img.forEach(image => {
+            image.addEventListener("click", () => {
+                mainImg.src = image.src
 
-        });
-    })
-}
-changeImg();
+            });
+        })
+    }
+    changeImg();
 
 })
-list.addEventListener("wheel",(e)=>{
-e.preventDefault();
-  list.scrollLeft += e.deltaY;  
+list.addEventListener("wheel", (e) => {
+    e.preventDefault();
+    list.scrollLeft += e.deltaY;
 })
 let isHovered = false;
-list.addEventListener("mouseenter",(e)=>{
+list.addEventListener("mouseenter", (e) => {
     isHovered = true;
 })
-list.addEventListener("mouseleave",(e)=>{
+list.addEventListener("mouseleave", (e) => {
     isHovered = false;
 })
-list.addEventListener("keydown",(e)=>{
+list.addEventListener("keydown", (e) => {
     e.preventDefault();
-if(!isHovered) return;
-    if(e.key === "ArrowRight"){
+    if (!isHovered) return;
+    if (e.key === "ArrowRight") {
         list.scrollBy({
-            left:200,
-            behavior:'smooth',
+            left: 200,
+            behavior: 'smooth',
         })
-    }else if(e.key === "ArrowLeft"){
+    } else if (e.key === "ArrowLeft") {
         list.scrollBy({
-            left:-200,
-            behavior:'smooth',
+            left: -200,
+            behavior: 'smooth',
         })
     }
 })
 
-function zoom(){
-   let zoomed = true;
-   let currentY = 0;
-mainImg.addEventListener("dblclick",(e)=>{
-    // alert("clicked")
-    
-    if(!zoomed){
+function zoom() {
+    let zoomed = true;
+    let currentY = 0;
+    mainImg.addEventListener("dblclick", (e) => {
+        // alert("clicked")
 
-let height = preview.clientHeight;
-console.log(preview);
-const newHeight = height * 2;
+        if (!zoomed) {
+
+            let height = preview.clientHeight;
+            console.log(preview);
+            const newHeight = height * 2;
 
 
-    mainImg.style.transform = "scale(2)";
-    preview.style.overflow = "hidden";
-    // mainImg.style.cursor = "zoom-out";
-    zoomed = true;
-    }else if(zoomed){
-         mainImg.style.transform = "scale(1)";
-         zoomed = false;
-         preview.style.height = '';
-        //   mainImg.style.cursor = "zoom-out";
-     }
-})
+            mainImg.style.transform = "scale(2)";
+            preview.style.overflow = "hidden";
+            // mainImg.style.cursor = "zoom-out";
+            zoomed = true;
+        } else if (zoomed) {
+            mainImg.style.transform = "scale(1)";
+            zoomed = false;
+            preview.style.height = '';
+            //   mainImg.style.cursor = "zoom-out";
+        }
+    })
 
- mainImg.setAttribute('tabindex','0');
- mainImg.focus();
-mainImg.addEventListener("keydown",(e)=>{
-   
-    if(!zoomed) return;
-    const preBox = preview.getBoundingClientRect();
-    const imgBox = mainImg.getBoundingClientRect();
+    mainImg.setAttribute('tabindex', '0');
+    mainImg.focus();
+    mainImg.addEventListener("keydown", (e) => {
 
-    console.log(imgBox);
-    const scale = 2;
-const preHeight = preBox.height;
-    const scaleHeight = imgBox.height;
-console.log(scaleHeight);
-    const maxUp = preHeight - scaleHeight;
-      
-    if(e.key === "ArrowUp"){
-        currentY -=20;
-       
-        if(currentY < maxUp) currentY = maxUp;
+        if (!zoomed) return;
+        const preBox = preview.getBoundingClientRect();
+        const imgBox = mainImg.getBoundingClientRect();
 
-         
-    }
-    if(e.key === "ArrowDown"){
-        currentY +=20;
+
+        const scale = 2;
+        const preHeight = preBox.height;
+
+        const scaleHeight = imgBox.height;
         
-        if(currentY > 0) currentY = 0;
+        const maxUp = preHeight - scaleHeight;
 
-         
-    }
+        if (e.key === "ArrowUp") {
+            currentY -= 20;
+            // if( currentY < scaleHeight) currentY = 0;
 
-mainImg.style.transform = `scale(2) translateY(${currentY}px)`;
-})
+        }
+        if (e.key === "ArrowDown") {
+            currentY += 20;
+
+            if (currentY > 0) currentY = 0;
+
+
+        }
+
+        mainImg.style.transform = `scale(2) translateY(${currentY}px)`;
+    })
 
 }
 
 zoom();
+let add = document.querySelector(".add");
+let thumbnailBtn = document.querySelector("#thumbnail");
+  let addBox = document.querySelector(".adding");
+add.addEventListener("click",()=>{
+    addBox.style.display = "block";
+})
+// document.addEventListener("click",()=>{
+//     addBox.style.display = "none";
+// })
