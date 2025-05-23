@@ -16,6 +16,7 @@
 .add{
     margin: 20px;
     cursor: pointer;
+    transition: transform .3s ease;
 }
 #navbar ul{
    position: relative; 
@@ -40,6 +41,7 @@ margin: 30px;
     line-height: 30px;
     border-radius: 10px;
     cursor: pointer;
+    
 }
 #dark{
     display: none;
@@ -50,19 +52,33 @@ main{
 .adding{
     position: absolute;
     left: 10px;
-    display: none;
+    /* display: none; */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .5s ease;
+}
+.show{
+    opacity: 1;
+    visibility: visible;
 }
 .adding li{
     list-style: none;
-    width: 90px;
+    /* width: 90px; */
     height: 40px;
     text-align: center;
-    font-size: 30px;
-    border: 2px solid #127DFF;
+    font-size: 25px;
+    /* border: 2px solid #127DFF; */
     border-top: none;
-    color: #127DFF;
+    color: #EFCE4A;
     font-weight: 550;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-family: 'Times New Roman', Times, serif;
+    cursor: pointer;
+}
+.adding li img{
+    padding: 5px;
 }
 .large {
     width: 90vw;
@@ -80,7 +96,7 @@ main{
 .view {
     width: 100%;
     height: 100%;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     margin: auto;
     border-radius: 20px;
     display: flex;
@@ -96,6 +112,7 @@ main{
 .next{
     position: absolute;
     top: 50%;
+    cursor: pointer;
 }
 #uploadedImg{
  width: 95%;
@@ -139,12 +156,11 @@ main{
 
 #thumbnailBox {
     width: 90vw;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     height: 15vh;
     margin: 0 auto;
     position: relative;
 }
-
 #thumbnails {
     width: 100%;
     height: 100%;
