@@ -85,28 +85,34 @@ list.addEventListener("wheel", (e) => {
     e.preventDefault();
     list.scrollLeft += e.deltaY;
 })
-let isHovered = false;
-list.addEventListener("mouseenter", (e) => {
-    isHovered = true;
-})
-list.addEventListener("mouseleave", (e) => {
-    isHovered = false;
-})
-list.addEventListener("keydown", (e) => {
+
+let next = document.querySelector("#next")
+next.addEventListener("click",(e)=>{
     e.preventDefault();
-    if (!isHovered) return;
-    if (e.key === "ArrowRight") {
-        list.scrollBy({
-            left: 200,
-            behavior: 'smooth',
-        })
-    } else if (e.key === "ArrowLeft") {
-        list.scrollBy({
-            left: -200,
-            behavior: 'smooth',
-        })
+    back.style.display = "block"
+    list.scrollBy({
+        left:+200,
+        behavior:'smooth',
+    })
+    const max = list.scrollWidth - list.clientWidth;
+     if(list.scrollLeft >= max ){
+        next.style.display = "none";
     }
 })
+
+let back = document.querySelector("#back");
+back.addEventListener("click",(e)=>{
+    next.style.display = "block";
+     list.scrollBy({
+             left: -200,
+             behavior: 'smooth',
+        })
+        if(list.scrollLeft <= 0){
+            back.style.display = "none";
+        }
+})
+    
+    
 
 function zoom() {
     let zoomed = true;
@@ -145,15 +151,6 @@ function zoom() {
         }
     })
 
-        mainImg.addEventListener("wheel",(e)=>{
-            const {percentX , percentY} = length(e,mainImg)
-            if(e.ctrlKey){
-                mainImg.style.transformOrigin = `${percentX}% ${percentY}%`;
-                mainImg.style.transform = "scale(2)";
-                zoomed = true;
-            }
-        })
-
 
     mainImg.setAttribute('tabindex', '0');
     mainImg.focus();
@@ -164,7 +161,7 @@ function zoom() {
         const imgBox = mainImg.getBoundingClientRect();
 
 
-        const scale = 2;
+    
         const preHeight = preBox.height;
 
         const scaleHeight = imgBox.height;
@@ -173,13 +170,13 @@ function zoom() {
 
         if (e.key === "ArrowUp") {
             currentY -= 20;
-            // if( currentY < scaleHeight) currentY = 0;
 
+            if (currentY  < maxUp) currentY = maxUp;
         }
         if (e.key === "ArrowDown") {
             currentY += 20;
 
-            if (currentY > 0) currentY = 0;
+            // if (currentY >= 0) currentY = 0;
 
 
         }
@@ -223,33 +220,50 @@ imgAdd.addEventListener("click", () => {
  
 let left = document.getElementById("left");
 let right = document.getElementById("right");
+ 
 
 right.addEventListener("click",(e)=>{
     e.preventDefault();
-    let listImg = document.getElementsByClassName("smallImg");
-    let array = Array.from(listImg);
+    left.style.opacity = 1;
+    left.style.visibility = "visible";
+
+   let listImg = document.getElementsByClassName("smallImg");
+let array = Array.from(listImg);
    const currentIndex = array.findIndex(img => img.src === mainImg.src)
     if(currentIndex !== -1 && currentIndex < array.length - 1){
         const nextImg = array[currentIndex + 1];
         mainImg.src = nextImg.src ;
+
+    }
+    if(currentIndex + 1  === array.length - 1){
+        right.style.opacity = 0;
+        right.style.visibility = "hidden";
+        
     }
 })
 left.addEventListener("click",(e)=>{
     let listImg = document.getElementsByClassName("smallImg");
     let array = Array.from(listImg);
+    right.style.opacity = 1;
+    right.style.visibility = "visible";
+    
     const currentIndex = array.findIndex(img => img.src === mainImg.src);
     if(currentIndex > 0){
         const preImg = array[currentIndex - 1];
         mainImg.src = preImg.src;
+        
+    }
+    if(currentIndex - 1 === 0){
+        left.style.opacity = 0;
+        left.style.visibility = "hidden";
     }
 })
 
-// mainImg.addEventListener("mouseenter",()=>{
-//     isHovered = true;
-//     if(e.key === "ArrowRight"){
-//         right.click();
-//     }
-// })
+// let listImg = document.getElementsByClassName("smallImg");
+// let array = Array.from(listImg);
+// if(array[0].src = mainImg.src){
+//     left.style.display = "none";
+// }
 
 document.body.addEventListener("keydown",(e)=>{
     if(e.ctrlKey && e.key === "i"){
@@ -260,6 +274,7 @@ document.body.addEventListener("keydown",(e)=>{
     }
     if(e.key === "ArrowRight"){
         right.click();
+        // right();
     }
     if(e.key === "ArrowLeft"){
         left.click();

@@ -4,7 +4,7 @@
     margin: 0;
 }
 #navbar{
-    width: 100vw;
+    width: 99.5vw;
     height: 7vh;
     display: flex;
     justify-content: space-between;
@@ -100,12 +100,13 @@ main{
     margin: auto;
     border-radius: 20px;
     display: flex;
-    justify-content:space-around;
-    align-items: center;
+    /* justify-content:sp; */
+    /* align-items: center; */
     overflow: hidden;
     position: relative;
     margin: 0 auto;
     user-select: none;
+    text-align: center;
     display: none;
 
 }
@@ -113,13 +114,25 @@ main{
     position: absolute;
     top: 50%;
     cursor: pointer;
+    transition: opacity .5s ease;
 }
+#right{
+    right: 0;
+}
+#left{
+    left: 0;
+    /* display: none; */
+    opacity: 0;
+    visibility: hidden;
+}
+
 #uploadedImg{
- width: 95%;
- height: 100%;
+ max-width: 90%;
+ max-height: 100%;
  object-fit: contain;
  /* border: 1px solid red; */
- border-radius: 20px;   
+ /* border-radius: 20px;    */
+ margin: 0 auto;
  cursor:grab;
  transition: transform .3s ease;
 }
@@ -175,16 +188,28 @@ main{
 }
 
 #thumbnails #list {
+    width: 95%;
     padding: 0;
     overflow-x: hidden;
     white-space: nowrap;
     scrollbar-width: none;
     -ms-overflow-style: none;
     scroll-behavior:smooth;
-    /* padding: 20px; */
-    /* display: flex; */
+    margin: 0 auto;
+    /* border: 1px solid black; */
 }
-
+.move{
+    position: absolute;
+    top: 30%;
+    width: 40px;
+    cursor: pointer;
+}
+#back{
+    display: none;
+}
+#next{
+    right: 0%;
+}
 .small {
     width: 100px;
     height: 100px;
@@ -229,7 +254,7 @@ align-self: flex-end;
 }
 #footer{
     height: 4vh;
-    width: 100vw;
+    width: 99.5vw;
     margin: 0 auto;
     border: 1px solid black;
     display: flex;
