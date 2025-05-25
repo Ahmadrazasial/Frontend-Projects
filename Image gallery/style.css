@@ -3,7 +3,8 @@
     padding: 0;
     margin: 0;
 }
-#navbar{
+
+#navbar {
     width: 99.5vw;
     height: 7vh;
     display: flex;
@@ -13,21 +14,24 @@
     background-color: #127DFF;
     /* padding: 20px; */
 }
-.add{
+
+.add {
     margin: 20px;
     cursor: pointer;
     transition: transform .3s ease;
 }
-#navbar ul{
-   position: relative; 
-   /* border: 1px solid green; */
-   width: 70px;
-   height: 30px;
-margin: 30px;
+
+#navbar ul {
+    position: relative;
+    /* border: 1px solid green; */
+    width: 70px;
+    height: 30px;
+    margin: 30px;
 }
+
 .button {
     width: 100%;
-    height: 100% ;
+    height: 100%;
     position: absolute;
     top: 0;
     left: 0;
@@ -36,20 +40,23 @@ margin: 30px;
     border: 2px solid white;
     color: white;
     font-size: 20px;
-    font-family: 'Times New Roman', Times, serif ;
+    font-family: 'Times New Roman', Times, serif;
     text-align: center;
     line-height: 30px;
     border-radius: 10px;
     cursor: pointer;
-    
+
 }
-#dark{
+
+#dark {
     display: none;
 }
-main{
+
+main {
     position: relative;
 }
-.adding{
+
+.adding {
     position: absolute;
     left: 10px;
     /* display: none; */
@@ -57,11 +64,13 @@ main{
     visibility: hidden;
     transition: opacity .5s ease;
 }
-.show{
+
+.show {
     opacity: 1;
     visibility: visible;
 }
-.adding li{
+
+.adding li {
     list-style: none;
     /* width: 90px; */
     height: 40px;
@@ -77,9 +86,11 @@ main{
     font-family: 'Times New Roman', Times, serif;
     cursor: pointer;
 }
-.adding li img{
+
+.adding li img {
     padding: 5px;
 }
+
 .large {
     width: 90vw;
     height: 71vh;
@@ -110,31 +121,34 @@ main{
     display: none;
 
 }
-.next{
+
+.next {
     position: absolute;
     top: 50%;
     cursor: pointer;
     transition: opacity .5s ease;
 }
-#right{
+
+#right {
     right: 0;
 }
-#left{
+
+#left {
     left: 0;
     /* display: none; */
     opacity: 0;
     visibility: hidden;
 }
 
-#uploadedImg{
- max-width: 90%;
- max-height: 100%;
- object-fit: contain;
- /* border: 1px solid red; */
- /* border-radius: 20px;    */
- margin: 0 auto;
- cursor:grab;
- transition: transform .3s ease;
+#uploadedImg {
+    max-width: 90%;
+    max-height: 100%;
+    object-fit: contain;
+    /* border: 1px solid red; */
+    /* border-radius: 20px;    */
+    margin: 0 auto;
+    cursor: grab;
+    transition: transform .3s ease;
 }
 
 .viewBtn {
@@ -174,6 +188,7 @@ main{
     margin: 0 auto;
     position: relative;
 }
+
 #thumbnails {
     width: 100%;
     height: 100%;
@@ -194,22 +209,28 @@ main{
     white-space: nowrap;
     scrollbar-width: none;
     -ms-overflow-style: none;
-    scroll-behavior:smooth;
+    scroll-behavior: smooth;
     margin: 0 auto;
     /* border: 1px solid black; */
 }
-.move{
+
+.move {
     position: absolute;
     top: 30%;
     width: 40px;
     cursor: pointer;
+    transition: opacity .5s ease;
 }
-#back{
-    display: none;
+
+#back {
+    opacity: 0;
+    visibility: hidden;
 }
-#next{
+
+#next {
     right: 0%;
 }
+
 .small {
     width: 100px;
     height: 100px;
@@ -226,33 +247,38 @@ main{
     border-radius: 10px;
     object-fit: auto;
 }
-#folder{
+
+#folder {
     width: 100%;
     /* height: 100%; */
     /* border: 1px solid green; */
-   display: flex;
-   /* flex-direction: column; */
-   border-radius: 10px;
-   justify-content: center;
-   align-items: center;
+    display: flex;
+    /* flex-direction: column; */
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
 }
-#folUpload{
+
+#folUpload {
     display: none;
 }
-#folderBtn{
+
+#folderBtn {
     /* border: none; */
-background:none;
-border: none;
-cursor: pointer;
-align-self: flex-end;
+    background: none;
+    border: none;
+    cursor: pointer;
+    align-self: flex-end;
 }
-#folderH{
+
+#folderH {
     font-size: 40px;
     font-family: 'Times New Roman', Times, serif;
     color: #127DFF;
     margin: 0;
 }
-#footer{
+
+#footer {
     height: 4vh;
     width: 99.5vw;
     margin: 0 auto;
@@ -260,118 +286,141 @@ align-self: flex-end;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color:#127DFF ;
+    background-color: #127DFF;
 }
-.lengths{
+
+.lengths {
     display: flex;
     margin: 0 70px;
     gap: 40px;
 }
-.length{
+
+.length {
     list-style: none;
-    color:white;
+    color: white;
     /* background-color: ; */
 }
-#footer button{
+
+#footer button {
     background: none;
     color: white;
-    border: 1px solid  white;
+    border: 1px solid white;
     width: 100px;
     height: 25px;
     border-radius: 10px;
     margin-right: 100px;
     cursor: pointer;
 }
-@media screen and (max-width:700px){
-    .view{
+
+@media screen and (max-width:700px) {
+    .view {
         /* display: block; */
         width: 100%;
         height: 80%;
     }
-    .viewBtn{
+
+    .viewBtn {
         width: 80%;
         height: 50%;
         text-align: center;
         /* display: none; */
     }
-    .viewBtn h1{
+
+    .viewBtn h1 {
         font-size: 22px;
     }
-    #upload{
+
+    #upload {
         padding: 10px 20px;
         font-size: 20px;
     }
-    #folder{
+
+    #folder {
         flex-direction: column;
         justify-content: center;
         align-items: center;
         text-align: center;
-    
+
     }
-    #folderH{
+
+    #folderH {
         font-size: 35px;
     }
-    #folderBtn{
+
+    #folderBtn {
         align-self: center;
     }
-    .next{
+
+    .next {
         display: none;
         width: 0;
     }
 }
-@media screen and (min-width:701px) and (max-width:1000px){
-    .view{
+
+@media screen and (min-width:701px) and (max-width:1000px) {
+    .view {
         /* display: block; */
         width: 100%;
         height: 80%;
     }
-    .next{
+
+    .next {
         display: none;
         width: 0;
     }
-    .viewBtn{
+
+    .viewBtn {
         width: 60%;
         height: 50%;
         text-align: center;
         /* display: none; */
     }
-    .viewBtn h1{
+
+    .viewBtn h1 {
         font-size: 30px;
     }
-    #upload{
+
+    #upload {
         padding: 15px 25px;
         font-size: 25px;
     }
-    #folder{
+
+    #folder {
         flex-direction: column;
         justify-content: center;
         align-items: center;
         text-align: center;
-    
+
     }
-    #folderH{
+
+    #folderH {
         font-size: 40px;
     }
-    #folderBtn{
+
+    #folderBtn {
         align-self: center;
     }
 }
+
 @media screen and (min-width:1601px) {
-    .view{
+    .view {
         /* display: block; */
         width: 100%;
         height: 100%;
     }
-    .viewBtn{
+
+    .viewBtn {
         width: 40%;
         height: 60%;
         text-align: center;
         /* display: none; */
     }
-    #folderH{
+
+    #folderH {
         font-size: 50px;
     }
-   #folderBtn img{
-    width: 50px;
-   }
+
+    #folderBtn img {
+        width: 50px;
+    }
 }
