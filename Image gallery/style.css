@@ -149,6 +149,8 @@ main {
     margin: 0 auto;
     cursor: grab;
     transition: transform .3s ease;
+    user-select: none;
+    outline: none;
 }
 
 .viewBtn {

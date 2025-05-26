@@ -75,13 +75,15 @@ folderInput.addEventListener("change", function (e) {
     }
 
     //makes small image appear in large
-    // let zoomed = false;
     function changeImg() {
         let img = document.querySelectorAll(".smallImg");
         
         img.forEach(image => {
             image.addEventListener("click", () => {
+               
                 mainImg.src = image.src
+                mainImg.style.transform = "scale(1)";
+                // mainImg.style.transition = "none";
             });
         })
     }
@@ -252,6 +254,7 @@ right.addEventListener("click", (e) => {
     if (currentIndex !== -1 && currentIndex < array.length - 1) {
         const nextImg = array[currentIndex + 1];
         mainImg.src = nextImg.src;
+        mainImg.style.transform = "scale(1)"
 
     }
     if (currentIndex + 1 === array.length - 1) {
