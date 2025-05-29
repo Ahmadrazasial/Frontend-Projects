@@ -1,33 +1,69 @@
-console.log("working");
-let pel = document.querySelectorAll(".pel");
-const pelArr = Array.from(pel);
+let gen = document.getElementById("generate");
+const pelArr = Array.from(document.querySelectorAll(".pel"));
 
-pelArr.forEach((pel,index)=>{
-    const col = pel.querySelectorAll(".col");
-    const colArr = Array.from(col);
-    colArr.forEach((col)=>{
-        
-        col.style.backgroundColor = randomColor(100);
-        console.log(col.backgroundColor);
-    })
-})
+const randomcolors = [
+    ()=> `hsl(${Math.random() * 30} , 100%,50%)`,
+    ()=> `hsl(${Math.random() * 30 + 30},100%,50%)`,
+    ()=> `hsl(${Math.random() * 30 + 60},100% ,50%)`,
+    ()=> `hsl(${Math.random() * 30 + 120},100% ,50%)`,
+    ()=> `hsl(${Math.random() * 60 + 180},100% ,40%)`,
+    ()=> `hsl(${Math.random() * 30 + 330},100% ,60%)`,
+];
 
-
-// const pelA = pelArr[0];
-
-// let colA = pelA.querySelectorAll(".col");
-// const colArra  = Array.from(colA);
-
-// colArra.forEach(col=>{
-//     col.style.backgroundColor = randomColor();
-// })
-
-
-function randomColor(nbr) {
-    const r = Math.floor(Math.random() * nbr +60).toString(16).padStart(2,'0');
-    const g = Math.floor(Math.random()* nbr + 60).toString(16).padStart(2,'0');
-    const b = Math.floor(Math.random() * nbr + 60).toString(16).padStart(2,'0');
-
-    return `#${r}${g}${b}`;
+function toHex(rgb) {
+    const result = rgb.match(/\d+/g)
+    .map(n => parseInt(n).toString(16).padStart(2,'0'))
+    .slice(0,3);
+    return `#${result.join('')}`;
 }
-// randomColor();
+
+function fill() {
+    pelArr.forEach((pel,i)=>{
+        const colorfn = randomcolors[i];
+        const colArr = Array.from(pel.querySelectorAll(".col"));
+        
+       
+        colArr.forEach((col) =>{
+            // const color = colorfn()
+            col.style.backgroundColor = colorfn();
+            const colRGB = window.getComputedStyle(col).backgroundColor;
+            const colHex = toHex(colRGB).toUpperCase();
+
+            col.querySelectorAll(".colCode").forEach(el=> el.remove());
+
+ const span = document.createElement("span");
+            span.className = "colCode";
+            span.textContent = colHex;
+            span.style.display = "none";
+            col.appendChild(span);
+
+            col.addEventListener("mouseenter",(e)=>{
+                span.style.display = "block"
+            })
+
+            col.addEventListener("mouseleave",(e)=>{
+                span.style.display = "none"
+            })
+            col.addEventListener("click",()=>{
+                navigator.clipboard.writeText(colHex)
+                .then(()=>{
+                    span.textContent = "Copied!";
+                setTimeout(()=>{
+                    span.textContent = colHex;
+                },1000)
+                })
+                
+
+            })
+        })
+        
+    })
+}
+document.addEventListener("DOMContentLoaded",(e)=>{
+    e.preventDefault();
+    fill()
+})
+gen.addEventListener("click",(e)=>{
+e.stopPropagation();
+    fill();
+})
