@@ -2,12 +2,12 @@ let gen = document.getElementById("generate");
 const pelArr = Array.from(document.querySelectorAll(".pel"));
 
 const randomcolors = [
-    ()=> `hsl(${Math.random() * 30} , 100%,50%)`,
-    ()=> `hsl(${Math.random() * 30 + 30},100%,50%)`,
-    ()=> `hsl(${Math.random() * 30 + 60},100% ,50%)`,
-    ()=> `hsl(${Math.random() * 30 + 120},100% ,50%)`,
+    ()=> `hsl(${Math.random() * 30} , 80%,60%)`,
+    ()=> `hsl(${Math.random() * 30 + 30},80%,60%)`,
+    ()=> `hsl(${Math.random() * 30 + 60},80% ,60%)`,
+    ()=> `hsl(${Math.random() * 30 + 160},80% ,60%)`,
     ()=> `hsl(${Math.random() * 60 + 180},100% ,40%)`,
-    ()=> `hsl(${Math.random() * 30 + 330},100% ,60%)`,
+    ()=> `hsl(${Math.random() * 30 + 310},80% ,60%)`,
 ];
 
 function toHex(rgb) {
