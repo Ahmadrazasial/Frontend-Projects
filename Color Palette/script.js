@@ -72,3 +72,74 @@ e.stopPropagation();
     fill();
 })
 
+
+function  autifill() {
+   let cont = document.getElementById("searchCon")
+let input = document.getElementById("searchBar");
+let btn = document.getElementById("Sbtn");
+const cols = ["red", "blue", "green", "yellow", "orange", "purple", "pink", "brown", "black", "white"];
+
+
+ const div = document.createElement("div");
+    div.className = "list";
+    cont.appendChild(div);
+div.style.display = "none";
+input.addEventListener("input",()=>{
+   const value = input.value.toLowerCase();
+   div.innerHTML = "";
+
+   if(!value){
+    div.style.display = "none";
+    return;
+   }
+
+   const filtered =  cols.filter(opt => opt.toLowerCase().includes(value));
+   filtered.forEach(obj=>{
+const box = document.createElement("div");
+box.className = "listItem";
+box.textContent = obj;
+box.addEventListener("mousedown",()=>{
+    input.value = obj;
+    div.style.display = "none";
+  
+})
+div.appendChild(box);
+   })
+
+
+   
+   let currentIndex = -1;
+   const items =Array.from (document.querySelectorAll(".listItem"));
+   
+   function clear() {
+    items.forEach(item => item.classList.remove("selected"));
+   }
+
+    document.addEventListener("keydown",(e)=>{
+        if (currentIndex >= 0) items[currentIndex].classList.remove("selected");
+        if(currentIndex >= 0){
+                items[currentIndex].style.backgroundColor = "";
+            }
+        if(e.key === "ArrowDown"){
+clear()
+            currentIndex = (currentIndex + 1)%items.length;
+            items[currentIndex].classList.add("selected")
+            
+        }
+        if(e.key === "ArrowUp"){
+            clear()
+            currentIndex = (currentIndex - 1 + items.length)%items.length;
+            items[currentIndex].classList.add("selected");
+        }
+    })
+
+
+div.style.display = filtered.length ? "block" : "none";
+})
+ document.addEventListener("click",(e)=>{
+    if(!div.contains(e.target)){
+        div.style.display = "none";
+    }
+ })
+}
+autifill();
