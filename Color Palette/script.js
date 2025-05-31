@@ -12,9 +12,12 @@ const randomcolors = [
 
 function toHex(rgb) {
     const result = rgb.match(/\d+/g)
+    // console.log(result)
     .map(n => parseInt(n).toString(16).padStart(2,'0'))
     .slice(0,3);
     return `#${result.join('')}`;
+    // console.log(`#${result.join("")}`)
+
 }
 
 function fill() {
@@ -27,6 +30,7 @@ function fill() {
             // const color = colorfn()
             col.style.backgroundColor = colorfn();
             const colRGB = window.getComputedStyle(col).backgroundColor;
+            // console.log(colRGB)
             const colHex = toHex(colRGB).toUpperCase();
 
             col.querySelectorAll(".colCode").forEach(el=> el.remove());
@@ -67,3 +71,4 @@ gen.addEventListener("click",(e)=>{
 e.stopPropagation();
     fill();
 })
+
