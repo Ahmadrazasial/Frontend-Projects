@@ -157,100 +157,95 @@ const colTheme = [
     colShade()
 ]
 
+// const cols = ["red", "blue", "green", "yellow", "orange", "purple", "pink", "brown", "black", "white"];
 
-// const cols = ["red", "green", "blue", "yellow", "orange", "pink", "black", "white"];
-
-function redShade(rMin = 150, rMax = 255, gMax = 80, bMax = 80) {
+function red(rmin = 150,rmax = 255,gmax = 80,bmax = 80) {
   const seed = Math.random();
-  const r = Math.floor(rMin + seed * (rMax - rMin));
-  const g = Math.floor(Math.random() * gMax);
-  const b = Math.floor(Math.random() * bMax);
-  return `rgb(${r}, ${g}, ${b})`;
+
+  const r = Math.floor(rmin + seed *(rmax - rmin));
+  const g = Math.floor(Math.random () *gmax);
+  const b = Math.floor(Math.random() * bmax);
+
+  return `rgb(${r},${g},${b})`;
 }
 
-function greenShade(gMin = 150, gMax = 255, rMax = 80, bMax = 80) {
+function blue(bmin = 150,bmax = 250,rmax = 80,gmax = 80) {
   const seed = Math.random();
-  const r = Math.floor(Math.random() * rMax);
-  const g = Math.floor(gMin + seed * (gMax - gMin));
-  const b = Math.floor(Math.random() * bMax);
-  return `rgb(${r}, ${g}, ${b})`;
+  const r = Math.floor(Math.random() * rmax);
+  const g = Math.floor(Math.random() * gmax);
+  const b =Math.floor(bmin + seed * (bmax - bmin));
+
+  return `rgb(${r},${g},${b})`;
+  
 }
 
-function blueShade(bMin = 150, bMax = 255, rMax = 80, gMax = 80) {
+function blue(gmin = 150,gmax = 250,rmax = 80,bmax = 80) {
   const seed = Math.random();
-  const r = Math.floor(Math.random() * rMax);
-  const g = Math.floor(Math.random() * gMax);
-  const b = Math.floor(bMin + seed * (bMax - bMin));
-  return `rgb(${r}, ${g}, ${b})`;
+  const r = Math.floor(Math.random() * rmax);
+  const b = Math.floor(Math.random() * bmax);
+  const g =Math.floor(gmin + seed * (gmax - gmin));
+
+  return `rgb(${r},${g},${b})`;
+  
+}
+console.log(blue())
+
+function yellow(gmin = 200,gmax = 250, rmin = 200,rmax = 250,bmax = 80) {
+  const seedr = Math.random();
+  const seedg = Math.random();
+  const r = Math.floor(rmin + seedr * (rmax - rmin));
+  const g =Math.floor(gmin + seedg * (gmax - gmin));
+const b = Math.floor(Math.random() * bmax);
+  return `rgb(${r},${g},${b})`;
+}
+console.log(yellow())
+
+
+function orange(rmin = 200,rmax = 255, gmin = 100,gmax = 170,bmax = 50) {
+  const seedr = Math.random();
+  const seedg = Math.random();
+  const r = Math.floor(rmin + seedr * (rmax - rmin));
+  const g =Math.floor(gmin + seedg * (gmax - gmin));
+const b = Math.floor(Math.random() * bmax);
+  return `rgb(${r},${g},${b})`;
 }
 
-function yellowShade(rMin = 200, rMax = 255, gMin = 200, gMax = 255, bMax = 80) {
-  const seedR = Math.random();
-  const seedG = Math.random();
-  const r = Math.floor(rMin + seedR * (rMax - rMin));
-  const g = Math.floor(gMin + seedG * (gMax - gMin));
-  const b = Math.floor(Math.random() * bMax);
-  return `rgb(${r}, ${g}, ${b})`;
+
+function pink(rmin = 200,rmax = 255,gmax = 100,bmin=150,bmax = 255) {
+  const seedr = Math.random();
+  const seedb = Math.random();
+  const r = Math.floor(rmin + seedr * (rmax - rmin));
+  const g = Math.floor(Math.random() * gmax);
+  const b =Math.floor(bmin + seedb * (bmax - bmin));
+
+  return `rgb(${r},${g},${b})`;
+}
+function purple(rmin = 120,rmax = 200, gmax = 60,bmin=120,bmax = 200) {
+  const seedr = Math.random();
+  const seedb = Math.random();
+  const r = Math.floor(rmin + seedr * (rmax - rmin));
+  const g =Math.floor(Math.random() * gmax);
+const b = Math.floor(bmin + seedb *(  bmax - bmin));
+  return `rgb(${r},${g},${b})`;
 }
 
-function orangeShade(rMin = 200, rMax = 255, gMin = 100, gMax = 170, bMax = 50) {
-  const seedR = Math.random();
-  const seedG = Math.random();
-  const r = Math.floor(rMin + seedR * (rMax - rMin));
-  const g = Math.floor(gMin + seedG * (gMax - gMin));
-  const b = Math.floor(Math.random() * bMax);
-  return `rgb(${r}, ${g}, ${b})`;
+
+function brown(rmin = 100,rmax = 160,gmin=50, gmax = 110,bmin=20,bmax = 60) {
+  const seed = Math.random();
+  const r = Math.floor(rmin + seed * (rmax - rmin));
+  const g =Math.floor(gmin + Math.random() * (gmax-gmin));
+const b = Math.floor(bmin + Math.random() *(  bmax - bmin));
+  return `rgb(${r},${g},${b})`;
 }
+input.style.backgroundColor =brown() ;
 
-function pinkShade(rMin = 200, rMax = 255, gMax = 100, bMin = 150, bMax = 255) {
-  const seedR = Math.random();
-  const seedB = Math.random();
-  const r = Math.floor(rMin + seedR * (rMax - rMin));
-  const g = Math.floor(Math.random() * gMax);
-  const b = Math.floor(bMin + seedB * (bMax - bMin));
-  return `rgb(${r}, ${g}, ${b})`;
+function black(max = 100) {
+  const value = Math.floor(Math.random() * max)
+  return `rgb(${value},${value},${value})`;
 }
-
-function blackShade(maxValue = 100) {
-  const val = Math.floor(Math.random() * maxValue);
-  return `rgb(${val}, ${val}, ${val})`;
+input.style.backgroundColor =black() ;
+function white(min = 200) {
+  const value = Math.floor(min + Math.random() *(255 - min))
+  return `rgb(${value},${value},${value})`;
 }
-
-function whiteShade(minValue = 200) {
-  const val = Math.floor(minValue + Math.random() * (255 - minValue));
-  return `rgb(${val}, ${val}, ${val})`;
-}
-
-// Get shade generator function based on color name
-function getColorShadeFunction(color) {
-  switch (color) {
-    case "red": return redShade;
-    case "green": return greenShade;
-    case "blue": return blueShade;
-    case "yellow": return yellowShade;
-    case "orange": return orangeShade;
-    case "pink": return pinkShade;
-    case "black": return blackShade;
-    case "white": return whiteShade;
-    default: return null;
-  }
-}
-
-document.getElementById('sBtn').addEventListener('click', () => {
-  const input = document.getElementById('searchBar').value.trim().toLowerCase();
-  if (!cols.includes(input)) {
-    alert("Please enter a valid color.");
-    return;
-  }
-
-  const shadeFunc = getColorShadeFunction(input);
-//   const pels = document.querySelectorAll('.pel');
-
-  pelArr.forEach(pel => {
-    const colArr =Array.from( pel.querySelectorAll(".col"));
-    
-    colArr.forEach(col=>{
-        col.style.backgroundColor = shadeFunc();
-    })
-  });
-});
+input.style.backgroundColor = white() ;
