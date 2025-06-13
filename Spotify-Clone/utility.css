@@ -1,0 +1,36 @@
+.flex{
+    display: flex;
+    gap: 5px;
+}
+.justify{
+    justify-content: center;
+}
+
+.align{
+    align-items: center;
+}
+.border{
+    border: 1px solid red;
+}
+.p-1{
+    padding: 5%;
+}
+.black{
+    background-color: black;
+    color: white;
+}
+.grey{
+    background-color: #1F1F1F;
+}
+.lightgrey{
+    background-color: #121212;
+}
+.filter{
+    filter: invert(1);
+}
+.rounded{
+    border-radius: 8px;
+}
+.m-1{
+    margin: 5px;
+}
