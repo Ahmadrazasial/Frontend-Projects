@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,21 +8,103 @@
     <link rel="stylesheet" href="utility.css">
     <title>Spotify - Web Player : Music for everyone</title>
 </head>
+
 <body>
     <div class="container flex black">
-        <div class="left border p-1 lightgrey">
+        <div class="left  p-1 ">
             <div class="home  m-1 grey rounded">
-<div class="logo flex align"><img class="filter" src="logo.svg" alt="logo">Spotify</div>
-<ul>
-<li class="justif"><img class="filter" src="home.svg" alt="home">Home</li>
-<li class="justif"><img class="filter" src="search.svg" alt="search">Search</li>
-    </ul>
-        </div>
-            <div class="library m-1 grey rounded">
-Your Libraray
+                <div class="logo flex align"><img class="filter" src="logo.svg" alt="logo">Spotify</div>
+                <ul>
+                    <li class="justif"><img class="filter" src="home.svg" alt="home">Home</li>
+                    <li class="justif"><img class="filter" src="search.svg" alt="search">Search</li>
+                </ul>
+            </div>
+            <div class="library m-1 p-1 grey rounded">
+                <div class="heading">
+                    <img class="filter" src="library.svg" alt="">
+                    <h2>
+                        Your Libraray
+                    </h2>
+                </div>
+                <div class="footer">
+                    <div class="tags">
+                        <div>
+                            <a href="https://www.spotify.com/pk-en/legal/">
+                                <span>Legal</span>
+                            </a>
+                        </div>
+                        <div>
+                            <a href="https://www.spotify.com/pk-en/safetyandprivacy/">
+                                <span>Safety & Privacy Center</span>
+                            </a>
+                        </div>
+                        <div>
+                            <a href="https://www.spotify.com/pk-en/legal/privacy-policy/">
+                                <span>Privacy Policy</span>
+                            </a>
+                        </div>
+                        <div>
+                            <a href="https://www.spotify.com/pk-en/legal/cookies-policy/">
+                                <span>Cookies</span>
+                            </a>
+                        </div>
+                        <div>
+                            <a href="https://www.spotify.com/pk-en/legal/privacy-policy/#s3">
+                                <span>About Ads</span>
+                            </a>
+                        </div>
+                        <div>
+                            <a href="https://www.spotify.com/pk-en/accessibility/">
+                                <span>Accessibility</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="cookie">
+                        <a href="https://www.spotify.com/legal/cookies-policy/" target="_blank" rel="noopener">
+                            <span>Cookies</span>
+                        </a>
+                    </div>
+                    <button class="lang">
+                        <img class="filter" src="lang.svg" alt="">
+                           
+                        
+                        English
+                    </button>
+                </div>
             </div>
         </div>
-        <div class="right border"></div>
+        <div class="right  ">
+            <header class="grey rounded ">
+                <div class="sides">
+                    <img class="m-1 p-1 filter" src="left.svg" alt="left">
+                <img class="m-1 p-1 filter" src="right.svg" alt="right">
+                </div>
+                
+                <div class="nav">
+                <button class="signup grey">Sign up</button>
+                <button class="login">Log in</button>
+                </div>
+            </header>
+            <main>
+                <div class="spotifyPlaylists grey rounded">
+                    <h2>Spotify Playlists
+                    </h2>
+                    <div class="cardContainer">
+                        <div class="card rounded">
+                            <img class="rounded" src="saphire.jpg" alt="">
+                            <h4>Sapphire</h4>
+                            <p>Ed Sheeran</p>
+                        </div>
+                          <div class="card rounded">
+                            <img class="rounded" src="saphire.jpg" alt="">
+                            <h4>Sapphire</h4>
+                            <p>Ed Sheeran</p>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
     </div>
 </body>
+
 </html>

@@ -1,6 +1,6 @@
 .flex{
     display: flex;
-    gap: 5px;
+    /* gap: 5px; */
 }
 .justify{
     justify-content: center;
@@ -13,7 +13,7 @@
     border: 1px solid red;
 }
 .p-1{
-    padding: 5%;
+    padding: 5px;
 }
 .black{
     background-color: black;
