@@ -34,3 +34,32 @@
 .m-1{
     margin: 5px;
 }
+
+
+
+/* Hide the scrollbar track but keep the thumb (for WebKit browsers) */
+.spotifyPlaylists::-webkit-scrollbar {
+  width: 8px;
+} */
+
+ .spotifyPlaylists::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.spotifyPlaylists::-webkit-scrollbar-thumb {
+  background-color: #555; /* thumb color */
+  border-radius: 0px;
+}
+
+.spotifyPlaylists::-webkit-scrollbar-thumb:hover {
+  background-color: #777;
+}
+
+/* Firefox support */
+.spotifyPlaylists,.songList {
+  scrollbar-width: thick;
+  scrollbar-color: #555 transparent;
+}
+
+
+
