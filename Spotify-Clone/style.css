@@ -248,7 +248,14 @@ header img:hover {
 .playbtns img {
     width: 35px;
 }
-
+.mainbar{
+    display: flex;
+    width: 90%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    color: #121212;
+}
 .seekbar {
     height: 2px;
     width: 90%;
@@ -256,6 +263,7 @@ header img:hover {
     margin: 7px 0;
     position: absolute;
     bottom: 0;
+    cursor: pointer;
 
 }
 
