@@ -22,13 +22,22 @@ body {
 }
 
 .home {
-    padding: 20px;
+    padding: 10px;
+    background-color: #1F1F1F;
+    display: block;
+
 
 }
 
 .logo {
-    font-size: 18px;
+    width: 100px;
+    font-size: 25px;
     font-family: "Roboto";
+    margin: 5px;
+    gap: 5px;
+    /* display: block; */
+    /* display: flex; */
+    /* align-items: center; */
 }
 
 .home ul li {
@@ -61,6 +70,8 @@ body {
 .library {
     min-height: 77vh;
     position: relative;
+    background-color: #1F1F1F;
+
 }
 
 .footer {
@@ -120,6 +131,11 @@ header {
     padding: 10px;
 }
 
+.sides .logo {
+    width: 0;
+    visibility: hidden;
+}
+
 header img {
     width: 30px;
     border-radius: 5px;
@@ -128,6 +144,17 @@ header img {
 header img:hover {
     background-color: white;
     cursor: pointer;
+}
+
+.sides {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hamburger {
+    width: 40px;
+    display: none;
 }
 
 .nav button {
@@ -139,6 +166,14 @@ header img:hover {
     font-weight: 700;
     cursor: pointer;
     border: none;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    display: none;
 }
 
 .signup {
@@ -224,7 +259,7 @@ header img:hover {
 .playbar {
     width: 73vw;
     height: 70px;
-    position: fixed;
+    position: absolute;
     bottom: 10px;
     margin: 1vh 1vw;
     display: flex;
@@ -248,7 +283,8 @@ header img:hover {
 .playbtns img {
     width: 35px;
 }
-.mainbar{
+
+.mainbar {
     display: flex;
     width: 90%;
     flex-direction: row;
@@ -256,6 +292,7 @@ header img:hover {
     align-items: center;
     color: #121212;
 }
+
 .seekbar {
     height: 2px;
     width: 90%;
@@ -316,4 +353,179 @@ header img:hover {
     gap: 10px;
     align-items: center;
     justify-content: center;
+}
+
+@media screen and (min-width:461px) and (max-width:1400px) {
+    .container {
+        justify-content: center;
+    }
+
+    .left {
+        width: 450px;
+        height: 98vh;
+        position: absolute;
+        left: -120%;
+        transition: all .3s;
+        z-index: 1;
+        background-color: black;
+    }
+
+    .right {
+        width: 98vw;
+        margin: 0;
+    }
+header{
+    height: 70px;
+}
+    .library {
+        height: 97vh;
+    }
+
+    .playbar {
+        width: 96vw;
+    }
+
+    .songList {
+        height: 60vh;
+    }
+
+    .spotifyPlaylists {
+        height: 83vh;
+    }
+
+    .hamburger {
+        display: block;
+        cursor: pointer;
+    }
+
+    .home {
+        display: none;
+    }
+
+    .home,
+    .library {
+        background-color: black;
+    }
+
+    .left .close {
+        z-index: 1;
+        display: block;
+    }
+
+    header {
+        margin: 0 0 5px;
+    }
+
+    .sides .logo {
+        width: 100%;
+        visibility: visible;
+        font-weight: bold;
+    }
+
+    .move {
+        display: none;
+    }
+}
+
+@media screen and (max-width:460px) {
+    .container {
+        justify-content: center;
+    }
+
+    .left {
+        width: 350px;
+        height: 98vh;
+        position: absolute;
+        left: -150%;
+        transition: all .3s;
+        z-index: 1;
+        background-color: black;
+    }
+
+    .right {
+        width: 98vw;
+        margin: 0;
+    }
+
+    .library {
+        height: 97vh;
+    }
+
+    .songList {
+        height: 60vh;
+    }
+
+    .playbar {
+        width: 96vw;
+        bottom: 0;
+    }
+
+    .seekbar {
+        width: 80%;
+    }
+
+    .spotifyPlaylists {
+        height: 85vh;
+        padding: 25px 10px;
+    }
+
+    .hamburger {
+        width: 40px;
+        display: block;
+        cursor: pointer;
+    }
+
+    .home {
+        display: none;
+    }
+
+    .home,
+    .library {
+        background-color: black;
+    }
+
+    .left .close {
+        z-index: 1;
+        display: block;
+    }
+
+    header {
+        height: 60px;
+        margin: 0 0 5px;
+        padding: 10px;
+    }
+
+    .sides .logo {
+        font-size: 25px;
+        font-weight: bold;
+        width: 100%;
+        visibility: visible;
+    }
+
+    .move {
+        display: none;
+    }
+
+    .nav button {
+        font-size: 12px;
+
+    }
+
+    .login {
+        width: 60px;
+        padding: 10px 5px;
+    }
+
+    .card {
+        width: calc(100vw - 10px);
+        /* height: 100px; */
+    }
+
+    .mainbar {
+        font-size: 12px;
+    }
+
+    .playbtns img {
+        width: 20px;
+    }
 }

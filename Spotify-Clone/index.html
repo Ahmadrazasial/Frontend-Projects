@@ -12,14 +12,17 @@
 <body>
     <div class="container flex black">
         <div class="left  p-1 ">
-            <div class="home  m-1 grey rounded">
-                <div class="logo flex align"><img class="filter" src="logo.svg" alt="logo">Spotify</div>
+            <div class="close">
+                <img class="filter" width="40px" src="close.svg" alt="">
+            </div>
+            <div class="home  m-1  rounded">
+                <div class="logo flex align"><img class="filter" src="logo.svg" alt="logo"> Spotify</div>
                 <ul>
                     <li class="justif"><img class="filter" src="home.svg" alt="home">Home</li>
                     <li class="justif"><img class="filter" src="search.svg" alt="search">Search</li>
                 </ul>
             </div>
-            <div class="library m-1 p-1 grey rounded">
+            <div class="library m-1 p-1  rounded">
                 <div class="heading">
                     <img class="filter" src="library.svg" alt="">
                     <h2>
@@ -81,8 +84,13 @@
         <div class="right  ">
             <header class="grey rounded ">
                 <div class="sides">
-                    <img class="m-1 p-1 filter" src="left.svg" alt="left">
-                    <img class="m-1 p-1 filter" src="right.svg" alt="right">
+                
+                    <img class="hamburger filter" src="hamburger.svg" alt="">
+                    <div class="logo flex align">
+                        Spotify
+                    </div>
+                    <img class="m-1 p-1 filter move" src="left.svg" alt="left">
+                    <img class="m-1 p-1 filter move" src="right.svg" alt="right">
                 </div>
 
                 <div class="nav">
@@ -94,7 +102,7 @@
                 <div class="spotifyPlaylists grey rounded">
                     <h2>Spotify Playlists
                     </h2>
-                    <div class="cardContainer">
+                     <div class="cardContainer">
                         <div class="card rounded">
                             <div class="play">
                                 <svg xmlns="http://www.w3.org/2000/svg" data-encore-id="icon" role="img"
@@ -137,8 +145,7 @@
 
                     </div>
                 </div>
-            </main>
-            <div class="playbar ">
+                <div class="playbar ">
                 <div class="seekbar">
                     <div class="circle">
                         
@@ -158,6 +165,8 @@
                 </div>
                 </div>
             </div>
+            </main>
+            
         </div>
     </div>
     <script src="script.js"></script>

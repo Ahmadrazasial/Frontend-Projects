@@ -130,5 +130,17 @@ document.querySelector(".seekbar").addEventListener("click",e=>{
     currentSong.currentTime = ((currentSong.duration) * percent)/100
 })
 
+//add event listner to hamburger
+
+document.querySelector(".hamburger").addEventListener("click",()=>{
+    document.querySelector(".left").style.left = "0";
+})
+
+//attach eventlistner to close btn
+
+document.querySelector(".close").addEventListener("click",()=>{
+    document.querySelector(".left").style.left = "-120%";
+})
+
 }
 main();
