@@ -1,5 +1,6 @@
 console.log("working");
 let currentSong = new Audio();
+let songs;
 // let start = document.querySelectorAll(".start");
 async function getsongs() {
     try {
@@ -30,13 +31,23 @@ async function getsongs() {
 
 const playMusic = (track,pause=false)=>{
     currentSong.src = "/spotify-clone/songs/" + track;
+    
+    document.querySelector(".songinfo").innerHTML = decodeURI(track);
+    document.querySelector(".songtime").innerHTML =" 00:00/00:00";
+
+  currentSong.addEventListener("loadedmetadata", function handler() {
+        document.querySelector(".songtime").innerHTML =
+            `${formatTime(currentSong.currentTime)}/${formatTime(currentSong.duration)}`;
+
+        // Remove listener after first use to prevent duplicates
+        currentSong.removeEventListener("loadedmetadata", handler);
+    });
+
 if(!pause){
     currentSong.play();
     play.src = "pause.svg";
     // start.src = "pause.svg";
 }
-    document.querySelector(".songinfo").innerHTML = decodeURI(track);
-    document.querySelector(".songtime").innerHTML =" 00:00/00:00";
 }
 
 
@@ -48,7 +59,7 @@ function formatTime(seconds) {
 
 
 async function main() {
-let songs = await getsongs();
+    songs = await getsongs();
 let firstTrack = songs[0].split("/songs/")[1]
 playMusic(firstTrack,pause=true);
 
@@ -116,6 +127,7 @@ play.addEventListener("click",()=>{
 //attach eventlistner to on time update
 
 currentSong.addEventListener("timeupdate",()=>{
+    // document.querySelector(".songtime").innerHTML = "00/00"
     document.querySelector(".songtime").innerHTML = `${formatTime(currentSong.currentTime)}/${formatTime(currentSong.duration)}`
     console.log(currentSong.currentTime,currentSong.duration);
     document.querySelector(".circle").style.left = ((currentSong.currentTime/currentSong.duration)* 100) +"%";
@@ -140,6 +152,43 @@ document.querySelector(".hamburger").addEventListener("click",()=>{
 
 document.querySelector(".close").addEventListener("click",()=>{
     document.querySelector(".left").style.left = "-120%";
+})
+
+//add event listener to next
+
+next.addEventListener("click",()=>{
+    let currentTrack = currentSong.src.split("/songs/")[1];
+
+    let index = songs.findIndex(s => s.includes(currentTrack));
+    console.log(index);
+
+    if(index < songs.length -1 ){
+       let nextTrack = songs[index + 1 ].split("/songs/")[1]; 
+       playMusic(nextTrack);
+    }
+})
+
+//add event listener to previous
+
+previous.addEventListener("click",()=>{
+    // currentSong.pause();
+    let currentTrack = currentSong.src.split("/songs/")[1];
+
+    let index = songs.findIndex(s => s.includes(currentTrack));
+    console.log(index);
+
+    if(index > 0 ){
+       let nextTrack = songs[index - 1 ].split("/songs/")[1]; 
+       playMusic(nextTrack);
+    }
+})
+
+//add event listner to change volume
+
+document.querySelector(".range").getElementsByTagName("input")[0].addEventListener("change",(e)=>{
+   console.log (e.target.value);
+
+   currentSong.volume = parseInt(e.target.value)/100;
 })
 
 }
