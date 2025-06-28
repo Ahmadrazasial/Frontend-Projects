@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
-
+:root{
+    --a:0
+}
 * {
     margin: 0;
     padding: 0;
@@ -229,6 +231,7 @@ header img:hover {
 
 .card:hover {
     background-color: #252525;
+--a:1
     /* opacity: 0.9; */
 }
 
@@ -238,8 +241,8 @@ header img:hover {
 }
 
 .play {
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     background-color: #1ed760;
     border-radius: 100%;
     display: flex;
@@ -248,7 +251,7 @@ header img:hover {
     position: absolute;
     top: 190px;
     right: 20px;
-    opacity: 0;
+    opacity: var(--a);
     transition: all .3s ease-out;
 }
 
