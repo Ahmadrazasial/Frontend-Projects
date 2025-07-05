@@ -10,12 +10,10 @@ async function getsongs(folder) {
         currFolder = folder;
         let a = await fetch(`http://127.0.0.1:5500/spotify-clone/${folder}/`)
         let response = await a.text();
-        // console.log(response);
         let div = document.createElement("div");
         div.innerHTML = response;
         let as = div.querySelectorAll("a");
-        console.log(as)
-        // console.log(a);
+        
 
         for (let index = 0; index < as.length; index++) {
             const element = as[index];
@@ -32,7 +30,6 @@ async function getsongs(folder) {
             let track = audio.src.split(`${currFolder}`)[1].replaceAll("%20", " ").replace(/^\/+/, "")
 
                 ;
-            console.log(track)
             // alert(track)
             let title = track.split("-")[0];
             let artist = track.split("-")[1].replace(".mp3", "");
@@ -63,21 +60,18 @@ async function getsongs(folder) {
         }
         //play songs by clicking on it
         Array.from(document.querySelector(".songList").getElementsByTagName("li")).forEach(e => {
-            console.log(e);
             e.addEventListener("click", element => {
-                // element.preventDefault();
                 let ps = e.querySelector(".info").getElementsByTagName("p");
                 let title = ps[0].innerText.trim();
                 let artist = ps[1].innerText.trim();
                 let track = `${title} - ${artist}.mp3`;
 
-                console.log(track)
+                
                 // playMusic(encodeURIComponent(track));
                 playMusic(track)
             })
 
         })
-        console.log(songs);
         return songs
     } catch (err) {
         console.log(err.message);
@@ -102,7 +96,7 @@ const playMusic = (track, pause = false) => {
     if (!pause) {
         currentSong.play();
         play.src = "pause.svg";
-        // start.src = "pause.svg";
+        
     }
 }
 
@@ -120,21 +114,18 @@ async function displayAlbums() {
     div.innerHTML = response;
     let anchors = div.getElementsByTagName("a");
     let cardCont = document.querySelector(".cardContainer");
-    console.log(anchors)
     let array = Array.from(anchors);
     for (let index = 0; index < array.length; index++) {
         const e = array[index];
         if (e.href.includes("/songs/")) {
-            console.log(e.href)
+            play.src = "play.svg";
             let parts = e.href.split("/");
             let folder = parts[parts.length - 1]
-            console.log(folder)
             //give the metadata from folder
 
              let a = await fetch(`http://127.0.0.1:5500/spotify-clone/songs/${folder}/info.json`)
         let response = await a.json();
-        console.log(response)
-        cardCont.innerHTML = cardCont.innerHTML + `<div data-folder="ncs" class="card rounded">
+        cardCont.innerHTML = cardCont.innerHTML + `<div data-folder="${folder}" class="card rounded">
                             <div class="play">
                                 <svg xmlns="http://www.w3.org/2000/svg" data-encore-id="icon" role="img"
                                     aria-hidden="true" class="e-9960-icon e-9960-baseline" viewBox="0 0 24 24">
@@ -151,7 +142,6 @@ async function displayAlbums() {
     }
      Array.from(document.getElementsByClassName("card")).forEach(card => {
         card.addEventListener("click", async (item) => {
-            console.log(item);
             songs = await getsongs(`songs/${item.currentTarget.dataset.folder}`);
         })
         let firstTrack = songs[0].split(`${currFolder}`)[1].replace(/^\/+/, "");
@@ -199,7 +189,6 @@ async function main() {
 
     document.querySelector(".seekbar").addEventListener("click", e => {
         let percent = (e.offsetX / e.target.getBoundingClientRect().width) * 100;
-        console.log(percent);
         document.querySelector(".circle").style.left = percent + "%";
         currentSong.currentTime = ((currentSong.duration) * percent) / 100
     })
@@ -223,7 +212,6 @@ async function main() {
             ;
 
         let index = songs.findIndex(s => s.includes(currentTrack));
-        console.log(index);
 
         if (index < songs.length - 1) {
             let nextTrack = songs[index + 1].split(`${currFolder}`)[1].replace(/^\/+/, "")
@@ -236,11 +224,9 @@ async function main() {
 
     previous.addEventListener("click", () => {
         // currentSong.pause();
-        let currentTrack = currentSong.src.split(`${currFolder}`)[1].replace(/^\/+/, "")
-            ;
-        console.log(currentTrack)
+        let currentTrack = currentSong.src.split(`${currFolder}`)[1].replace(/^\/+/, "");
+        
         let index = songs.findIndex(s => s.includes(currentTrack));
-        console.log(index);
 
         if (index > 0) {
             let previousTrack = songs[index - 1].split(`${currFolder}`)[1].replace(/^\/+/, "")
@@ -252,14 +238,24 @@ async function main() {
     //add event listner to change volume
 
     document.querySelector(".range").getElementsByTagName("input")[0].addEventListener("change", (e) => {
-        console.log(e.target.value);
 
         currentSong.volume = parseInt(e.target.value) / 100;
     })
 
     //add event listner to card
 
-   
+   //add event listner to volume button to mute unmute
+
+   document.querySelector(".volume img").addEventListener("click",e=>{
+    if(e.target.src.includes("volume.svg")){
+        e.target.src = e.target.src.replace("volume.svg","mute.svg");
+        currentSong.volume = 0
+    }
+    else{
+        e.target.src = e.target.src.replace("mute.svg","volume.svg");
+        currentSong.volume = document.querySelector(".range").getElementsByTagName("input")[0].value /100; 
+    }
+   })
 
 }
 main();

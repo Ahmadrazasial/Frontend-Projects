@@ -206,14 +206,16 @@ header img:hover {
 .spotifyPlaylists {
     padding: 25px;
     height: 79vh;
-    overflow-y: scroll;
+    
 }
 
 .cardContainer {
+    max-height: 66vh;
     margin: 10px 0;
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
+    overflow-y: scroll;
 
 }
 
