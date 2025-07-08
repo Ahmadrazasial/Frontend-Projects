@@ -39,7 +39,7 @@ async function getsongs(folder) {
 <li>
                             
                             <div class="info flex">
-                                <img class="filter" src="music.svg" alt="music">
+                                <img class="filter" src="img/music.svg" alt="music">
                                 <div>
                                     <p class="track">${title}</p>
                                     <p class="artist">${artist}</p>
@@ -50,7 +50,7 @@ async function getsongs(folder) {
                                     PlayNow
 
                                 </span>
-                                <img class="filter" id= "start" src="play.svg" alt="play">
+                                <img class="filter" id= "start" src="img/play.svg" alt="play">
                             </div>
                         </li>
 
@@ -95,7 +95,7 @@ const playMusic = (track, pause = false) => {
 
     if (!pause) {
         currentSong.play();
-        play.src = "pause.svg";
+        play.src = "img/pause.svg";
         
     }
 }
@@ -118,7 +118,7 @@ async function displayAlbums() {
     for (let index = 0; index < array.length; index++) {
         const e = array[index];
         if (e.href.includes("/songs/")) {
-            play.src = "play.svg";
+            // play.src = "play.svg";
             let parts = e.href.split("/");
             let folder = parts[parts.length - 1]
             //give the metadata from folder
@@ -143,9 +143,10 @@ async function displayAlbums() {
      Array.from(document.getElementsByClassName("card")).forEach(card => {
         card.addEventListener("click", async (item) => {
             songs = await getsongs(`songs/${item.currentTarget.dataset.folder}`);
+            let firstTrack = songs[0].split(`${currFolder}`)[1].replace(/^\/+/, "");
+        playMusic(firstTrack ,pause = false);
         })
-        let firstTrack = songs[0].split(`${currFolder}`)[1].replace(/^\/+/, "");
-        playMusic(firstTrack, pause = true);
+        
     })
 
 }
@@ -168,11 +169,11 @@ async function main() {
     play.addEventListener("click", () => {
         if (currentSong.paused) {
             currentSong.play();
-            play.src = "pause.svg"
+            play.src = "img/pause.svg"
 
         } else {
             currentSong.pause();
-            play.src = "play.svg";
+            play.src = "img/play.svg";
         }
     })
 
@@ -181,7 +182,7 @@ async function main() {
     currentSong.addEventListener("timeupdate", () => {
         // document.querySelector(".songtime").innerHTML = "00/00"
         document.querySelector(".songtime").innerHTML = `${formatTime(currentSong.currentTime)}/${formatTime(currentSong.duration)}`
-        console.log(currentSong.currentTime, currentSong.duration);
+        // console.log(currentSong.currentTime, currentSong.duration);
         document.querySelector(".circle").style.left = ((currentSong.currentTime / currentSong.duration) * 100) + "%";
     })
 

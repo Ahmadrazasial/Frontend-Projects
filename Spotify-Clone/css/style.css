@@ -383,7 +383,9 @@ header img:hover {
     .container {
         justify-content: center;
     }
-
+.cardContainer{
+    max-height: 72vh;
+}
     .left {
         width: 450px;
         height: 98vh;
@@ -463,7 +465,9 @@ header{
     .container {
         justify-content: center;
     }
-
+.cardContainer{
+    max-height: 72vh;
+}
     .left {
         width: 350px;
         height: 98vh;
@@ -573,5 +577,23 @@ header{
 
     .playbtns img {
         width: 20px;
+    }
+}
+@media screen and (min-width:461px) and (max-width:700px) {
+    .cardContainer{
+        max-height: 66vh;
+    }
+    .playbar{
+        height: 120px;
+        /* gap: 15px; */
+    }
+    .playbar .mainbar{
+        flex-direction: column;
+        gap: 6px;
+        align-items: center;
+        justify-content: center;
+    }
+    .songinfo{
+        text-align: center;
     }
 }
