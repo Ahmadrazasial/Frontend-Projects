@@ -133,6 +133,7 @@ header {
     align-items: center;
     margin: 10px 0;
     padding: 10px;
+    box-sizing: border-box;
 }
 
 .sides .logo {
@@ -207,15 +208,16 @@ header img:hover {
 
 .spotifyPlaylists {
     padding: 25px;
-    height: 79vh;
+    height: 82vh;
 
 }
 
 .cardContainer {
-    max-height: 66vh;
+    height: 66vh;
     margin: 10px 0;
     display: flex;
     flex-wrap: wrap;
+
     gap: 10px;
     overflow-y: scroll;
     justify-content: center;
@@ -227,6 +229,7 @@ header img:hover {
     /* border: 1px solid red; */
     padding: 12px;
     display: flex;
+    flex-grow: 1;
     flex-direction: column;
     gap: 10px;
     background-color: transparent;
@@ -393,12 +396,12 @@ header img:hover {
     }
 
     .cardContainer {
-        max-height: 72vh;
+        max-height: calc(100% - 100px);
     }
 
     .left {
-        width: 450px;
-        height: 98vh;
+        width: 60vw;
+        height: 99vh;
         position: absolute;
         left: -120%;
         transition: all .3s;
@@ -416,7 +419,7 @@ header img:hover {
     }
 
     .library {
-        height: 97vh;
+        height: 100%;
     }
 
     .playbar {
@@ -435,11 +438,11 @@ header img:hover {
     }
 
     .songList {
-        height: 60vh;
+        height: calc(100% - 300px);
     }
 
     .spotifyPlaylists {
-        height: 83vh;
+        height: calc(100vh - 125px);
     }
 
     .spotifyPlaylists h2 {
@@ -480,17 +483,24 @@ header img:hover {
     }
 }
 
+
+@media screen and (min-width:701px) and (max-width:1400px) {
+    .cardContainer {
+        height: calc(100% - 120px);
+    }
+}
+
 @media screen and (min-width:301px) and (max-width:460px) {
     .container {
         justify-content: center;
     }
 
     .cardContainer {
-        max-height: 72vh;
+        height: calc(100% - 140px);
     }
 
     .left {
-        width: 350px;
+        width: 96vw;
         height: 98vh;
         position: absolute;
         left: -150%;
@@ -505,16 +515,16 @@ header img:hover {
     }
 
     .library {
-        height: 97vh;
+        height: 100%;
     }
 
     .songList {
-        height: 60vh;
+        height: calc(100% - 240px);
     }
 
     .playbar {
         height: 100px;
-        width: 96vw;
+        width: 98%;
         bottom: 0;
     }
 
@@ -540,7 +550,7 @@ header img:hover {
     }
 
     .spotifyPlaylists {
-        height: 85vh;
+        height: calc(100vh - 115px);
         padding: 25px 10px;
     }
 
@@ -571,7 +581,8 @@ header img:hover {
     }
 
     .sides .logo {
-        font-size: 25px;
+        font-size: 30px;
+        /* color: #1ed760; */
         font-weight: bold;
         width: 100%;
         visibility: visible;
@@ -607,16 +618,19 @@ header img:hover {
     .timevol img {
         width: 20px;
     }
+
+    .lang {
+        margin: 15px;
+    }
 }
 
 @media screen and (min-width:461px) and (max-width:700px) {
     .cardContainer {
-        max-height: 66vh;
+        max-height: calc(100% - 150px);
     }
 
     .playbar {
         height: 120px;
-        /* gap: 15px; */
     }
 
     .playbar .mainbar {
@@ -629,6 +643,7 @@ header img:hover {
     .songinfo {
         text-align: center;
     }
+
 }
 
 @media screen and (max-width:300px) {
@@ -638,37 +653,40 @@ header img:hover {
         /* margin: auto; */
     }
 
-    .cardContainer {
-        max-height: 72vh;
-    }
-
     .left {
-        width: 100vw;
+        width: 96vw;
         height: 98vh;
         position: absolute;
         left: -180%;
         transition: all .3s;
         z-index: 1;
         background-color: black;
+        padding: 0;
     }
 
     .right {
         width: 100vw;
-        margin: 0;
+        /* margin: 0 ; */
     }
 
     .library {
-        height: 97vh;
+        height: 100%;
     }
 
     .songList {
-        height: 60vh;
+        height: calc(100% - 250px);
     }
 
-    .playbar {
-        height: 100px;
-        width: 96vw;
-        bottom: 0;
+    .songList ul li {
+        padding: 5px;
+    }
+
+    .songList ul li img {
+        width: 20px;
+    }
+
+    .info {
+        font-size: 10px;
     }
 
     .seekbar {
@@ -693,8 +711,8 @@ header img:hover {
     }
 
     .spotifyPlaylists {
-        width: 100%;
-        height: 90vh;
+        width: 93vw;
+        height: calc(100vh - 90px);
         padding: 25px 10px;
         justify-content: center;
     }
@@ -765,17 +783,12 @@ header img:hover {
     }
 
     .playbar {
-        width: 100vw;
-        left: 3vw;
-    }
-
-    .playbar {
-        width: 98vw;
-        position: absolute;
-        bottom: 10px;
-        margin: 1vh 1vw;
+        width: 92vw;
+        bottom: 5px;
+        margin: 1vh 4vw;
         border-radius: 20px;
-        /* padding: 5px 0; */
+        height: 100px;
+
     }
 
     .playbtns img {
@@ -790,5 +803,38 @@ header img:hover {
 
     .timevol img {
         width: 20px;
+    }
+
+    .lang {
+        /* padding: 7px; */
+        margin: 10px;
+    }
+}
+
+@media screen and (min-width :1401px) {
+    .left {
+        height: 98vh;
+    }
+
+    .library {
+        height: calc(100% - 150px);
+    }
+
+    .right {
+        height: 98vh;
+    }
+
+    .spotifyPlaylists {
+        height: calc(100vh - 137px);
+
+    }
+
+    .cardContainer {
+        height: calc(100% - 130px);
+    }
+
+    .card {
+        max-height: 150px;
+
     }
 }
