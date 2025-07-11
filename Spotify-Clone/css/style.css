@@ -226,15 +226,16 @@ header img:hover {
 
 .card {
     width: 170px;
-    /* border: 1px solid red; */
     padding: 12px;
     display: flex;
-    flex-grow: 1;
+    /* flex-grow: 1; */
     flex-direction: column;
     gap: 10px;
     background-color: transparent;
     position: relative;
     cursor: pointer;
+    transition: transform .5s ease-in-out;
+
 }
 
 .card:hover {
@@ -257,8 +258,8 @@ header img:hover {
     justify-content: center;
     align-items: center;
     position: absolute;
-    top: 190px;
-    right: 20px;
+    top: 49%;
+    right: 15%;
     opacity: var(--a);
     transition: all .3s ease-out;
 }
@@ -399,6 +400,10 @@ header img:hover {
         max-height: calc(100% - 100px);
     }
 
+    .card {
+        max-height: 250px;
+    }
+
     .left {
         width: 60vw;
         height: 99vh;
@@ -487,6 +492,10 @@ header img:hover {
 @media screen and (min-width:701px) and (max-width:1400px) {
     .cardContainer {
         height: calc(100% - 120px);
+    }
+
+    .play {
+        top: 45%;
     }
 }
 
@@ -607,6 +616,10 @@ header img:hover {
         /* height: 100px; */
     }
 
+    .play {
+        top: 65%;
+    }
+
     .mainbar {
         font-size: 12px;
     }
@@ -626,7 +639,7 @@ header img:hover {
 
 @media screen and (min-width:461px) and (max-width:700px) {
     .cardContainer {
-        max-height: calc(100% - 150px);
+        height: calc(100% - 150px);
     }
 
     .playbar {
@@ -644,6 +657,9 @@ header img:hover {
         text-align: center;
     }
 
+    .play {
+        top: 50%;
+    }
 }
 
 @media screen and (max-width:300px) {
@@ -773,9 +789,17 @@ header img:hover {
         border: 1px solid white;
     }
 
+    .cardContainer {
+        height: calc(100% - 160px);
+    }
+
     .card {
         width: calc(100vw - 10px);
         /* height: 100px; */
+    }
+
+    .play {
+        top: 55%;
     }
 
     .mainbar {
@@ -817,7 +841,7 @@ header img:hover {
     }
 
     .library {
-        height: calc(100% - 150px);
+        height: calc(100% - 160px);
     }
 
     .right {
@@ -825,7 +849,7 @@ header img:hover {
     }
 
     .spotifyPlaylists {
-        height: calc(100vh - 137px);
+        height: calc(100vh - 140px);
 
     }
 
@@ -834,7 +858,7 @@ header img:hover {
     }
 
     .card {
-        max-height: 150px;
+        max-height: 250px;
 
     }
 }
