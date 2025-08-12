@@ -1,70 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Hand Book</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <div class="contianer">
-        <header>
 
+<body>
+    <div class="container">
+        <header>
+            <nav class="navbar">
+                <div class="logo">
+                <img src="logo.svg" alt="">
+                <h1>Word </h1>
+                </div>
+                <div class="list">
+                    <ul>
+                        <li>Home</li>
+                        <li>About</li>
+                    </ul>
+                </div>
+            </nav>
         </header>
         <main>
             <div class="search-area">
-                <h1>Enter any word to know</h1>
-            <form action="" class="searchform">
-                <label for="input"></label>
-                <input type="text" id="input" placeholder="ridiculous...">
-                <button type="submit" id="btn">Search</button>
-                <div class="error">
-
+                <div class="heading"><h1>Your WordBook</h1>
+                
                 </div>
-            </form>
+                <h1>Enter any word to know</h1>
+                <form action="" class="searchform">
+                    <div class="search">
+                    <input type="text" id="input" placeholder="ridiculous...">
+                    <button type="submit" id="btn">Search</button>
+                    </div>
+                    <div class="error">
+
+                    </div>
+                </form>
             </div>
             <div class="result">
-                <table>
-                    <tbody>
-                        <tr>
-                            <td>meaning</td>
-                            <td>Its used for lg</td>
-                        </tr>
-                        <tr>
-                            <td>synonym</td>
-                            <td>Its used for lg</td>
-                        </tr>
-                        <tr>
-                            <td>Antonym</td>
-                            <td>Its used for lg</td>
-                        </tr>
-                        <tr>
-                            <td>theme</td>
-                            <td>Its used for lg</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="resultImg">
+                <img src="loading.svg" alt="" id="loading">
+                </div>
+                <div class="resultCont">
+
+                </div>
+
             </div>
             <div class="history">
                 <ul>
-                    <li>1</li>
-                    <li>2</li>
-                    <li>3</li>
-                    <li>4</li>
-                    <li>5</li>
-                    <li>6</li>
-                    <li>7</li>
-                    <li>8</li>
-                    <li>9</li>
-                    <li>10</li>
+
                 </ul>
             </div>
         </main>
         <footer>
-
+            <p>WordBook &copy; CopyRight: All rights reserved.Developed by tooperstudent</p>
         </footer>
 
     </div>
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
+
 </html>

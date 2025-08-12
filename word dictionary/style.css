@@ -1,90 +1,508 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
 * {
     padding: 0;
     margin: 0;
 }
 
+body {
+    /* overflow-x: hidden; */
+}
+
 .container {
-    width: 98vw;
+    width: 100vw;
     margin: 0 auto;
+    border: 1px solid black;
 }
 
 main {
     width: 70%;
-    margin: 20vh auto;
+    margin: 0 auto;
     border: 1px solid black;
     padding: 20px;
 }
 
+.navbar {
+    width: 100%;
+    /* height: 80px; */
+    border: 1px solid black;
+    /* text-align: center; */
+    box-sizing: border-box;
+    padding: 15px 4vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.navbar .logo {
+    display: flex;
+    align-content: center;
+    align-items: center;
+}
+
+.navbar .logo h1 {
+    font-size: 40px;
+    font-family: "playfair display";
+    cursor: pointer;
+}
+
+.navbar .logo img {
+    width: 40px;
+    margin: 0 10px;
+}
+
+.navbar .list ul {
+    display: flex;
+    align-content: center;
+}
+
+.navbar .list ul li {
+    list-style: none;
+    margin: 0 20px;
+    font-size: 25px;
+    position: relative;
+    cursor: pointer;
+}
+
+.navbar .list ul li::after {
+    content: " ";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    /* color: black; */
+    /* margin: 2px 0; */
+    background-color: black;
+    transition: width .3s ease;
+}
+
+.navbar .list ul li:hover::after {
+    width: 100%;
+}
+
 .search-area {
     width: 100%;
+    border: 1px solid black;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 10px;
+    gap: 30px;
     box-sizing: border-box;
+    margin: 20px 0;
+    padding: 10px;
 }
 
+
 .search-area h1 {
-    font-size: 30px;
+    font-size: 40px;
+}
+
+.search-area .heading h1 {
+    font-size: 100px;
+    color: white;
+    -webkit-text-stroke: 2px black;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-variant: small-caps;
+    font-feature-settings: "aalt";
+    text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5);
+    /* text-transform:uppercase; */
+    /* font-style: italic; */
 }
 
 .search-area .searchform {
-    width: 80%;
+    width: 90%;
     margin: 0 auto;
     gap: 0;
+    box-sizing: border-box;
+    border: 1px solid black;
+}
+
+.search {
+    display: flex;
+    justify-content: center;
+    width: 100%;
 }
 
 .searchform input {
-    width: 80%;
-    padding: 10px;
+    width: 79%;
+    padding: 10px 30px;
     font-size: 25px;
+    box-sizing: border-box;
+    /* border: 1px solid black; */
+    border-bottom-left-radius: 30px;
+    border-top-left-radius: 30px;
 }
 
 .searchform #btn {
-    width: 15%;
-    font-size: 25px;
+    width: 20%;
+    font-size: 30px;
     padding: 10px;
+    box-sizing: border-box;
+    /* border: 1px solid black;  */
+    border-left: none;
+    border-bottom-right-radius: 30px;
+    border-top-right-radius: 30px;
+    cursor: pointer;
+    background-color: white;
+    transition: all .5s ease;
+}
 
+.searchform #btn:hover {
+    background-color: black;
+    color: white;
+
+}
+
+.error {
+    width: 100%;
+    border: 1px solid yellow;
+    padding: 5px 30px;
+    color: red;
+    box-sizing: border-box;
 }
 
 .result {
+    width: 0%;
+    margin: 20px auto;
+    border: 1px solid pink;
+    box-sizing: border-box;
+    /* padding: 20px; */
+}
+
+.result .resultImg {
+    width: 90%;
+    text-align: center;
+}
+
+.result #loading {
+    display: none;
+    width: 100px;
+    /* text-align: center; */
+}
+
+.result .resultCont {
+    width: 100%;
+    border: 1px solid blue;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.resultCont .output {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    text-align: start;
+    padding: 5px 10px;
+    box-sizing: border-box;
+    margin: 10px auto;
+
+}
+
+.output .title {
+    width: 20%;
+    font-size: 25px;
+    font-family: sans-serif;
+}
+
+.output .copyText {
+    width: 70%;
+    font-size: 25px;
+    /* word-spacing:1; */
+    font-style: italic;
+}
+
+.output .copied,
+.output .copyImg {
+    width: 5%;
+}
+
+.output .copyImg img {
+    width: 20px;
+    cursor: pointer
+}
+
+.history {
     width: 100%;
     margin: 20px auto;
-
 }
 
-.result table {
-    width: 80%;
+.history ul {
+    width: 90%;
     margin: 20px auto;
-    border: 2px solid blue;
+    border: 2px solid black;
 }
-.result table tr{
-    font-size: 20px;
-    border-bottom: 1px solid rgb(177, 17, 17);
-}
-.result table tr td{
-    padding: 10px;
-  
-}
-.result table tr td:first-child{
-    width: 20%;
-    border-right: 1px solid black;
-}
-.history{
-     width: 100%;
-    margin: 20px auto;
-}
-.history ul{
-     width: 80%;
-    margin: 20px auto;
-    border: 2px solid blue;
-}
-.history ul li{
+
+.history ul li {
     width: 100%;
     padding: 10px 20px;
     border: 1px solid gray;
     box-sizing: border-box;
     list-style: none;
-    font-size: 18px;
+    font-size: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: all .5s ease;
+}
+
+.history ul:has(li:hover) li:not(:hover) {
+    transform: scaleY(.95);
+}
+
+.history ul li:hover {
+    transform: scale(1.01);
+}
+
+footer {
+    width: 100%;
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+
+footer p {
+    font-family: sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    word-spacing: 1;
+}
+
+@media screen and (max-width:500px) {
+    .navbar {
+        padding: 10px 2vw;
+    }
+
+    .navbar .logo h1 {
+        font-size: 1.5rem;
+    }
+
+    .navbar .logo img {
+        width: 1.5rem;
+    }
+
+    .navbar .list ul li {
+        font-size: 1.2rem;
+        margin: 0 10px;
+    }
+
+    main {
+        width: 100%;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+
+    .search-area {
+        width: 100%;
+        gap: 20px;
+        padding: 0;
+        margin: 10px auto;
+    }
+
+    .search-area h1 {
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    .search-area .heading h1 {
+        font-size: 2.5rem;
+    }
+
+    .search-area .searchform {
+        width: 100%;
+    }
+
+    .searchform input {
+        font-size: 1.2rem;
+        width: 75%;
+        padding: 5px 20px;
+    }
+
+    .searchform #btn {
+        width: 25%;
+        font-size: 1rem;
+        padding: 5px;
+    }
+
+    .error {
+        padding: 5px 15px;
+        font-size: .8rem;
+    }
+
+    .result .resultCont {
+        padding: 0;
+    }
+
+    .resultCont .output {
+        padding: 0;
+        text-wrap: wrap;
+    }
+
+    .output .title {
+        width: 22%;
+        font-size: .9rem;
+
+    }
+
+    .output .copyText {
+        width: 58%;
+        font-size: 1rem;
+        overflow: auto;
+    }
+
+    .output .copied,
+    .output .copyImg {
+        width: 10%;
+    }
+
+    .output .copyImg img {
+        width: 20px;
+        cursor: pointer
+    }
+
+    .history {
+        margin: 10px auto;
+    }
+
+    .history ul {
+        width: 100%;
+    }
+
+    .history ul li {
+        font-size: 15px;
+        padding: 5px 10px;
+    }
+
+    .history ul li img {
+        width: 25px;
+
+    }
+
+    footer p {
+        font-size: 15px;
+        padding: 0 10px;
+    }
+}
+
+@media screen and (min-width:501px) and (max-width:1000px) {
+    .navbar {
+        padding: 10px 3vw;
+    }
+
+    .navbar .logo h1 {
+        font-size: 1.6rem;
+    }
+
+    .navbar .logo img {
+        width: 1.6rem;
+    }
+
+    .navbar .list ul li {
+        font-size: 1.4rem;
+        margin: 0 10px;
+    }
+
+    main {
+        width: 100%;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+
+    .search-area {
+        width: 100%;
+        gap: 20px;
+        padding: 10px;
+        margin: 15px auto;
+    }
+
+    .search-area h1 {
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    .search-area .heading h1 {
+        font-size: 3.2rem;
+    }
+
+    .search-area .searchform {
+        width: 95%;
+    }
+
+    .searchform input {
+        font-size: 1.5rem;
+        width: 75%;
+        padding: 7px 20px;
+    }
+
+    .searchform #btn {
+        width: 25%;
+        font-size: 1.5rem;
+        padding: 7px;
+    }
+
+    .error {
+        padding: 5px 20px;
+        font-size: .9rem;
+    }
+
+    .result .resultCont {
+        padding: 10px;
+    }
+
+    .resultCont .output {
+        padding: 0;
+        text-wrap: wrap;
+    }
+
+    .output .title {
+        width: 22%;
+        font-size: 1.1rem;
+
+    }
+
+    .output .copyText {
+        width: 58%;
+        font-size: 1.1rem;
+        overflow: auto;
+    }
+
+    .output .copied,
+    .output .copyImg {
+        width: 10%;
+        text-align: center;
+    }
+
+    .output .copyImg img {
+        width: 20px;
+        cursor: pointer
+    }
+
+    .history {
+        margin: 15px auto;
+    }
+
+    .history ul {
+        width: 90%;
+    }
+
+    .history ul li {
+        font-size: 1.3rem;
+        padding: 5px 10px;
+    }
+
+    .history ul li img {
+        width: 25px;
+
+    }
+
+    footer p {
+        font-size: 1rem;
+        padding: 0 15px;
+    }
 }
