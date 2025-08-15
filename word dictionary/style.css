@@ -21,24 +21,28 @@
 }
 
 body {
-    /* overflow-x: hidden; */
+    overflow-x: hidden;
+    position: relative;
+    min-height: 100vh;
+    padding-bottom: 60px;
 }
 
 .container {
     width: 100vw;
     margin: 0 auto;
-    border: 1px solid black;
+    /* border: 1px solid black; */
+    
 }
 
 main {
     max-width: 1200px;
     margin: 0 auto;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     padding: var(--padding-lg);
 }
 .navbar {
     max-width: 1200px;
-    border: 1px solid black;
+    border-bottom: 1px solid black;
     padding: var(--padding-sm) 0;
     display: flex;
     justify-content: space-between;
@@ -84,7 +88,7 @@ main {
     bottom: 0;
     width: 0;
     height: 2px;
-    background-color: black;
+    /* background-color: black; */
     transition: width .3s ease;
 }
 
@@ -94,7 +98,7 @@ main {
 
 .search-area {
     width: 100%;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -106,13 +110,14 @@ main {
 
 
 .search-area h1 {
-    font-size: 40px;
+    font-size: clamp(1.8rem, 2vw + 1rem, 2.5rem);
+    text-align: center;
 }
 
 .search-area .heading h1 {
-    font-size: 100px;
+    font-size: clamp(40px,calc(4vw + 24px), 100px);
     color: white;
-    -webkit-text-stroke: 2px black;
+    /* -webkit-text-stroke: 2px black; */
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-variant: small-caps;
     font-feature-settings: "aalt";
@@ -123,7 +128,7 @@ main {
     width: 90%;
     margin: 0 auto;
     gap: 0;
-    border: 1px solid black;
+    /* border: 1px solid black; */
 }
 
 .search {
@@ -135,14 +140,14 @@ main {
 .searchform input {
     width: 79%;
     padding: var(--padding-sm) var(--padding-xl);
-    font-size: 25px;
+    font-size: clamp(1.18rem, .5vw + 1rem, 1.6rem);
     border-bottom-left-radius: 30px;
     border-top-left-radius: 30px;
 }
 
 .searchform #btn {
     width: 20%;
-    font-size: 30px;
+    font-size: clamp(1rem,.8vw + 1rem, 1.9rem );
     padding: var(--padding-sm);
     border-left: none;
     border-bottom-right-radius: 30px;
@@ -160,14 +165,14 @@ main {
 
 .error {
     width: 100%;
-    border: 1px solid yellow;
+    /* border: 1px solid yellow; */
     padding: var(--padding-xs) var(--padding-xl);
     color: red;
 }
 
 .result {
     width: 0%;
-    margin: 20px auto;
+    margin: var(--margin-lg) auto;
     border: 1px solid pink;
 }
 
@@ -200,13 +205,13 @@ main {
 
 .output .title {
     width: 20%;
-    font-size: 25px;
+    font-size: clamp(.8rem, .45vw + .8rem, 1.6rem);
     font-family: sans-serif;
 }
 
 .output .copyText {
     width: 70%;
-    font-size: 25px;
+    font-size: clamp(1rem, .5vw + 1rem, 1.6rem);
     font-style: italic;
 }
 
@@ -229,7 +234,7 @@ main {
 .history ul {
     width: 90%;
     margin: var(--margin-lg) auto;
-    border: 2px solid black;
+    /* border: 2px solid black; */
 }
 
 .history ul li {
@@ -237,7 +242,7 @@ main {
     padding: var(--padding-sm) var(--padding-lg);
     border: 1px solid gray;
     list-style: none;
-    font-size: 20px;
+    font-size: clamp(.9rem, .45vw + 1rem, 1.6rem);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -260,22 +265,21 @@ footer {
     text-align: center;
     padding: 15px 0;
     margin: 0 auto;
+    position: absolute;
+    bottom: 0;
 }
 
 footer p {
     font-family: sans-serif;
-    font-size: 20px;
+    font-size: clamp(.9rem, .45vw + .8rem, 1.3rem);
     font-weight: 500;
     word-spacing: 1;
+    
 }
 
 @media screen and (max-width:480px) {
     .navbar {
         padding: var(--padding-sm) 2vw;
-    }
-
-    .navbar .logo h1 {
-        /* font-size: 1.5rem; */
     }
 
     .navbar .logo img {
@@ -299,28 +303,17 @@ footer p {
         margin: var(--margin-sm) auto;
     }
 
-    .search-area h1 {
-        font-size: 2rem;
-        text-align: center;
-    }
-
-    .search-area .heading h1 {
-        font-size: 2.5rem;
-    }
-
     .search-area .searchform {
         width: 100%;
     }
 
     .searchform input {
-        font-size: 1.2rem;
         width: 75%;
         padding: var(--padding-xs) var(--padding-lg);
     }
 
     .searchform #btn {
         width: 25%;
-        font-size: 1rem;
         padding: var(--padding-xs);
     }
 
@@ -339,14 +332,12 @@ footer p {
     }
 
     .output .title {
-        width: 22%;
-        font-size: .9rem;
+        width: 30%;
 
     }
 
     .output .copyText {
-        width: 58%;
-        font-size: 1rem;
+        width: 50%;
         overflow: auto;
     }
 
@@ -369,7 +360,6 @@ footer p {
     }
 
     .history ul li {
-        font-size: 15px;
         padding: var(--padding-xs) var(--padding-sm);
     }
 
@@ -379,7 +369,7 @@ footer p {
     }
 
     footer p {
-        font-size: 15px;
+        /* font-size: 15px; */
         padding: 0 var(--padding-sm);
     }
 }
@@ -387,10 +377,6 @@ footer p {
 @media screen and (min-width:481px) and (max-width:1023px) {
     .navbar {
         padding: var(--padding-sm) 3vw;
-    }
-
-    .navbar .logo h1 {
-        /* font-size: 1.6rem; */
     }
 
     .navbar .logo img {
@@ -414,28 +400,17 @@ footer p {
         margin: 15px auto;
     }
 
-    .search-area h1 {
-        font-size: 2rem;
-        text-align: center;
-    }
-
-    .search-area .heading h1 {
-        font-size: 3.2rem;
-    }
-
     .search-area .searchform {
         width: 95%;
     }
 
     .searchform input {
-        font-size: 1.5rem;
         width: 75%;
         padding: 7px var(--padding-lg);
     }
 
     .searchform #btn {
         width: 25%;
-        font-size: 1.5rem;
         padding: 7px;
     }
 
@@ -455,13 +430,11 @@ footer p {
 
     .output .title {
         width: 22%;
-        font-size: 1.1rem;
 
     }
 
     .output .copyText {
         width: 58%;
-        font-size: 1.1rem;
         overflow: auto;
     }
 
@@ -485,7 +458,6 @@ footer p {
     }
 
     .history ul li {
-        font-size: 1.3rem;
         padding: var(--padding-xs) var(--padding-sm);
     }
 
@@ -495,7 +467,7 @@ footer p {
     }
 
     footer p {
-        font-size: 1rem;
+        /* font-size: 1rem; */
         padding: 0 var(--padding-md);
     }
 }
@@ -537,9 +509,6 @@ footer p {
 
     .output .copyImg img{
         width: 25px;
-    }
-    .history ul li{
-        font-size: 25px;
     }
     .history ul li img{
         width: 35px;
