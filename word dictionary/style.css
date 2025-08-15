@@ -173,7 +173,7 @@ main {
 .result {
     width: 0%;
     margin: var(--margin-lg) auto;
-    border: 1px solid pink;
+    /* border: 1px solid pink; */
 }
 
 .result .resultImg {
@@ -189,7 +189,7 @@ main {
 
 .result .resultCont {
     width: 100%;
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
     padding: var(--padding-sm);
 }
 
@@ -223,7 +223,7 @@ main {
 
 .output .copyImg img {
     width: 20px;
-    cursor: pointer
+    cursor: pointer;
 }
 
 .history {
@@ -338,7 +338,6 @@ footer p {
 
     .output .copyText {
         width: 50%;
-        overflow: auto;
     }
 
     .output .copied,
@@ -348,7 +347,6 @@ footer p {
 
     .output .copyImg img {
         width: 20px;
-        cursor: pointer
     }
 
     .history {
@@ -435,7 +433,6 @@ footer p {
 
     .output .copyText {
         width: 58%;
-        overflow: auto;
     }
 
     .output .copied,
@@ -446,7 +443,6 @@ footer p {
 
     .output .copyImg img {
         width: 20px;
-        cursor: pointer
     }
 
     .history {
